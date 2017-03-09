@@ -26,6 +26,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *crText;
 @property (weak, nonatomic) IBOutlet UITextField *ciText;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (nonatomic, strong) CADisplayLink *timer;
+@property (nonatomic, strong) NSMutableArray *complexArray;
+@property (nonatomic) int iwidth;
+@property (nonatomic) int iheight;
+@property (nonatomic) int loops;
+@property (nonatomic, strong) Complex *c;
+
 //@property (nonatomic) int scale;
 @end
 
@@ -34,6 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _imgView.contentMode = UIViewContentModeCenter;
+    self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
+    _loops = 0;
     NSLog(@"cpu numbers: %d",countOfCores());
 //    _scale = [UIScreen mainScreen].scale;
 //    _scale = 1;
@@ -54,7 +63,11 @@
     
 }
 - (IBAction)runF:(id)sender {
-    [self run];
+    _c = [[Complex alloc] initWithReal:[_crText.text doubleValue] image:[_ciText.text doubleValue]];
+    if(_loops==0){
+        self.timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(run2)];
+        [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    }
 }
 
 - (void)run
@@ -62,13 +75,6 @@
     NSDate *start;
     start = [NSDate date];
 
-    //CGFloat zr = [_zrText.text doubleValue];
-    //CGFloat zi = [_zrText.text doubleValue];
-    CGFloat cr = [_crText.text doubleValue];
-    CGFloat ci = [_ciText.text doubleValue];
-    
-    //Complex *z0 = [[Complex alloc] initWithReal:zr image:zi];
-    Complex *c = [[Complex alloc] initWithReal:cr image:ci];
     int iwidth=301, iheight=301;
     size_t bytesPerRow = iwidth * 4;
     
@@ -81,7 +87,6 @@
     
     CGColorSpaceRelease(colorSpace);
     
-    int halfWidth = iwidth/2;
     int halfHeight = iheight/2;
 
 //    UInt8 bgr[3] = {0};
@@ -121,7 +126,7 @@
             Complex *z0;
             for(int j= 0; j<iwidth; j++){
                 z0 = [[Complex alloc] initWithReal:(CGFloat)j*4/iwidth-2 image:(CGFloat)i*4/iheight-2];
-                z= fractal(z0, c);
+                z= fractal(z0, _c);
                 colorForFractal(z, bgr);
                 ptr[0]= bgr[0];
                 ptr[1] = bgr[1];
@@ -138,7 +143,7 @@
             Complex *z0;
             for(int j= 0; j<iwidth; j++){
                 z0 = [[Complex alloc] initWithReal:(CGFloat)j*4/iwidth-2 image:(CGFloat)i*4/iheight-2];
-                z= fractal(z0, c);
+                z= fractal(z0, _c);
                 colorForFractal(z, bgr);
                 ptr[0]= bgr[0];
                 ptr[1] = bgr[1];
@@ -171,6 +176,79 @@ Complex * fractal(Complex * z, Complex * c)
     return z;
 }
 
+- (void)run2
+{
+    if(_loops>=300) {
+        [_timer invalidate];
+        _loops = 0;
+        return;
+    }
+    
+    if(_loops%30 !=0) {
+        _loops++;
+        return;
+    }
+    
+    int iwidth=301, iheight=301;
+    size_t bytesPerRow = iwidth * 4;
+    
+    void* data = malloc(iwidth * iheight * 4);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    CGBitmapInfo kBGRxBitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
+    
+    CGContextRef context = CGBitmapContextCreate(data,iwidth, iheight, 8, bytesPerRow, colorSpace, kBGRxBitmapInfo);
+    
+    CGColorSpaceRelease(colorSpace);
+    
+    UInt8 bgr[3] = {0};
+    UInt8 *ptr= data;
+    if(_loops==0){
+        for(int i=0 ; i<iheight; i++){
+            Complex *z;
+            for(int j= 0; j<iwidth; j++){
+                z = [[Complex alloc] initWithReal:(CGFloat)j*4/iwidth-2 image:(CGFloat)i*4/iheight-2];
+                _complexArray[j+i*iwidth]= z;
+                colorForFractal(z, bgr);
+                ptr[0]= bgr[0];
+                ptr[1] = bgr[1];
+                ptr[2] = bgr[2];
+                ptr += 4;
+            }
+        }
+        CGImageRef cgimage = CGBitmapContextCreateImage(context);
+        UIImage* image = [UIImage imageWithCGImage:cgimage scale:1 orientation:UIImageOrientationUp];
+        _imgView.image = image;
+        CGImageRelease(cgimage);
+        CGContextRelease(context);
+    }else{
+        for(int i=0 ; i<iheight; i++){
+            for(int j= 0; j<iwidth; j++){
+                int index = j+i*iwidth;
+                Complex *tmpc = _complexArray[index];
+                if([tmpc modelSquare]>20){
+                    ptr += 4;
+                    continue;
+                }
+                _complexArray[index] = [[tmpc square] addWith:_c];
+                colorForFractal(_complexArray[index], bgr);
+                ptr[0] = bgr[0];
+                ptr[1] = bgr[1];
+                ptr[2] = bgr[2];
+                ptr += 4;
+            }
+        }
+    
+        CGImageRef cgimage = CGBitmapContextCreateImage(context);
+        UIImage* image = [UIImage imageWithCGImage:cgimage scale:1 orientation:UIImageOrientationUp];
+        _imgView.image = image;
+        CGImageRelease(cgimage);
+        CGContextRelease(context);
+    }
+    _loops++;
+}
+
+
 
 void colorForFractal(Complex *c, UInt8 *bgr)
 {
@@ -180,8 +258,6 @@ void colorForFractal(Complex *c, UInt8 *bgr)
    
     CGFloat hsv[3] = {h/maxM,1,1};
     CGFloat bgrf[3] ={0,0,0};
-//    int hi = h;
-    //hsv[0] = hi%2 == 0 ? h*0.5/maxM : 0.5 + h*0.5/maxM;
     HSVtoRGB(hsv, bgrf);
     bgr[0] = bgrf[0]*255;
     bgr[1] = bgrf[1]*255;
