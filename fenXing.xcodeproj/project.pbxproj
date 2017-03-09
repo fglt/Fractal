@@ -13,6 +13,10 @@
 		171D70131E6D9D5700C406D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171D70111E6D9D5700C406D6 /* Main.storyboard */; };
 		171D70151E6D9D5800C406D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171D70141E6D9D5800C406D6 /* Assets.xcassets */; };
 		171D70181E6D9D5800C406D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171D70161E6D9D5800C406D6 /* LaunchScreen.storyboard */; };
+		171D70211E6D9E0700C406D6 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 171D70201E6D9E0700C406D6 /* Complex.m */; };
+		171D70271E7035F100C406D6 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 171D70261E7035F100C406D6 /* FGTHSBSupport.m */; };
+		171D702A1E7037E600C406D6 /* FGColorHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 171D70291E7037E600C406D6 /* FGColorHelp.m */; };
+		171D702D1E7106A100C406D6 /* Fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 171D702C1E7106A100C406D6 /* Fractal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		171D70141E6D9D5800C406D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		171D70171E6D9D5800C406D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		171D70191E6D9D5800C406D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		171D701F1E6D9E0600C406D6 /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
+		171D70201E6D9E0700C406D6 /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
+		171D70251E7035F100C406D6 /* FGTHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTHSBSupport.h; sourceTree = "<group>"; };
+		171D70261E7035F100C406D6 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
+		171D70281E7037E600C406D6 /* FGColorHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGColorHelp.h; sourceTree = "<group>"; };
+		171D70291E7037E600C406D6 /* FGColorHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGColorHelp.m; sourceTree = "<group>"; };
+		171D702B1E7106A100C406D6 /* Fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fractal.h; sourceTree = "<group>"; };
+		171D702C1E7106A100C406D6 /* Fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fractal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,8 @@
 		171D70071E6D9D5700C406D6 /* fenXing */ = {
 			isa = PBXGroup;
 			children = (
+				171D70251E7035F100C406D6 /* FGTHSBSupport.h */,
+				171D70261E7035F100C406D6 /* FGTHSBSupport.m */,
 				171D700B1E6D9D5700C406D6 /* AppDelegate.h */,
 				171D700C1E6D9D5700C406D6 /* AppDelegate.m */,
 				171D700E1E6D9D5700C406D6 /* ViewController.h */,
@@ -67,6 +81,12 @@
 				171D70161E6D9D5800C406D6 /* LaunchScreen.storyboard */,
 				171D70191E6D9D5800C406D6 /* Info.plist */,
 				171D70081E6D9D5700C406D6 /* Supporting Files */,
+				171D701F1E6D9E0600C406D6 /* Complex.h */,
+				171D70201E6D9E0700C406D6 /* Complex.m */,
+				171D70281E7037E600C406D6 /* FGColorHelp.h */,
+				171D70291E7037E600C406D6 /* FGColorHelp.m */,
+				171D702B1E7106A100C406D6 /* Fractal.h */,
+				171D702C1E7106A100C406D6 /* Fractal.m */,
 			);
 			path = fenXing;
 			sourceTree = "<group>";
@@ -151,9 +171,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171D70271E7035F100C406D6 /* FGTHSBSupport.m in Sources */,
+				171D70211E6D9E0700C406D6 /* Complex.m in Sources */,
+				171D702D1E7106A100C406D6 /* Fractal.m in Sources */,
 				171D70101E6D9D5700C406D6 /* ViewController.m in Sources */,
 				171D700D1E6D9D5700C406D6 /* AppDelegate.m in Sources */,
 				171D700A1E6D9D5700C406D6 /* main.m in Sources */,
+				171D702A1E7037E600C406D6 /* FGColorHelp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
