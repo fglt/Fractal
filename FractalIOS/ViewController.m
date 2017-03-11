@@ -20,9 +20,9 @@
 //@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *timesText;
 @property (weak, nonatomic) IBOutlet UISwitch *typeSwitch;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressIndicator;
 
-@property (nonatomic, strong) CADisplayLink *timer;
+@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSMutableArray *complexArray;
 //@property (nonatomic, strong) NSMutableArray *timesArray;
 @property (nonatomic) int iwidth;
@@ -47,7 +47,7 @@
     _iheight = 602;
     _loops = 0;
     NSLog(@"cpu numbers: %d",countOfCores());
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,9 +68,8 @@
         if(_loops==0){
             self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
             //self.timesArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
-            _progressView.progress = 0;
-            self.timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(run2)];
-            [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+            _progressIndicator.progress = 0;
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(run2) userInfo:nil repeats:YES];
         }
     }
 }
@@ -91,7 +90,7 @@
 {
     NSDate *start;
     start = [NSDate date];
-
+    
     [self imgContextWithWidth:_iwidth height:_iheight];
     
     int bytesPerRow = 4*_iwidth;
@@ -127,9 +126,8 @@
 
 - (void)run2
 {
-    int loopsStep = 15;
-     _progressView.progress = (CGFloat)_loops/loopsStep/_ktimes;
-    if(_loops>=_ktimes*loopsStep) {
+    _progressIndicator.progress = (CGFloat)_loops/_ktimes;
+    if(_loops>=_ktimes) {
         [_timer invalidate];
         free(imgData);
         imgData = nil;
@@ -140,11 +138,6 @@
         self.complexArray = nil;
         //self.timesArray = nil;
         _loops = 0;
-        return;
-    }
-    
-    if(_loops%loopsStep !=0) {
-        _loops++;
         return;
     }
     
@@ -171,14 +164,14 @@
             }
             
             color( kdata[index], bgr, _ktimes*1.2);
-
+            
             ptr[0] = bgr[0];
             ptr[1] = bgr[1];
             ptr[2] = bgr[2];
             ptr += 4;
         }
     }
-
+    
     CGImageRef cgimage = CGBitmapContextCreateImage(context);
     UIImage* image = [UIImage imageWithCGImage:cgimage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
     _imgView.image = image;

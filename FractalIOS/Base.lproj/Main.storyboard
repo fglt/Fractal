@@ -199,7 +199,7 @@
                         <outlet property="ciText" destination="u52-q1-xZX" id="Dmg-q8-7eb"/>
                         <outlet property="crText" destination="qnJ-G2-TQx" id="g0x-uz-cu4"/>
                         <outlet property="imgView" destination="dPD-CV-7aC" id="dix-vj-DwO"/>
-                        <outlet property="progressView" destination="p1y-SS-isy" id="1bW-X2-LcG"/>
+                        <outlet property="progressIndicator" destination="p1y-SS-isy" id="zJc-br-Iz8"/>
                         <outlet property="timeText" destination="Lne-Oh-wdx" id="BDi-sZ-CPb"/>
                         <outlet property="timesText" destination="1lm-We-bgS" id="7vD-Xy-O1E"/>
                         <outlet property="typeSwitch" destination="rfK-g5-1cb" id="Dm3-C7-2cX"/>
