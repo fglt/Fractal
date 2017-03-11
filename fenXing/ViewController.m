@@ -25,7 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UITextField *crText;
 @property (weak, nonatomic) IBOutlet UITextField *ciText;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UITextField *timeText;
+//@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *timesText;
 @property (weak, nonatomic) IBOutlet UISwitch *typeSwitch;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
@@ -132,7 +133,7 @@
         _imgView.image = image;
         double de = [[NSDate date] timeIntervalSinceDate:start];
         
-        _timeLabel.text = [NSString stringWithFormat:@"%f",de];
+        _timeText.text = [NSString stringWithFormat:@"%f",de];
     });
 }
 
