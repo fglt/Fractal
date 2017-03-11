@@ -1,16 +1,15 @@
 //
-//  Fractal.h
+//  fractal.h
 //  fenXing
 //
-//  Created by Coding on 09/03/2017.
+//  Created by Coding on 11/03/2017.
 //  Copyright © 2017 Coding. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "Complex.h"
 
-@interface Fractal : NSObject
+Complex * fractal(Complex * z, Complex * c, int k);
 
-@property (nonatomic, strong) Complex *zComplex;
-@property (nonatomic, strong) Complex *cComplex;
-@end
+void color(CGFloat value, UInt8 *bgr,CGFloat maxValue);
+
+unsigned int countOfCores();
