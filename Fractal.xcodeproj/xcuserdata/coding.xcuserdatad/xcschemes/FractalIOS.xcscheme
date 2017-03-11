@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "171D70041E6D9D5700C406D6"
-               BuildableName = "fenXing.app"
-               BlueprintName = "fenXing"
-               ReferencedContainer = "container:fenXing.xcodeproj">
+               BuildableName = "Fractal.app"
+               BlueprintName = "Fractal"
+               ReferencedContainer = "container:Fractal.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,17 +32,17 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "171D70041E6D9D5700C406D6"
-            BuildableName = "fenXing.app"
-            BlueprintName = "fenXing"
-            ReferencedContainer = "container:fenXing.xcodeproj">
+            BlueprintIdentifier = "174BED1C1E74548B00CEEF31"
+            BuildableName = "FractalIOS.app"
+            BlueprintName = "FractalIOS"
+            ReferencedContainer = "container:Fractal.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "171D70041E6D9D5700C406D6"
-            BuildableName = "fenXing.app"
-            BlueprintName = "fenXing"
-            ReferencedContainer = "container:fenXing.xcodeproj">
+            BlueprintIdentifier = "174BED1C1E74548B00CEEF31"
+            BuildableName = "FractalIOS.app"
+            BlueprintName = "FractalIOS"
+            ReferencedContainer = "container:Fractal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "171D70041E6D9D5700C406D6"
-            BuildableName = "fenXing.app"
-            BlueprintName = "fenXing"
-            ReferencedContainer = "container:fenXing.xcodeproj">
+            BuildableName = "Fractal.app"
+            BlueprintName = "Fractal"
+            ReferencedContainer = "container:Fractal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		174BECEB1E7430D100CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECEA1E7430D100CEEF31 /* AppDelegate.m */; };
+		174BECEE1E7430D100CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECED1E7430D100CEEF31 /* main.m */; };
+		174BECF11E7430D100CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECF01E7430D100CEEF31 /* ViewController.m */; };
+		174BECF31E7430D100CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BECF21E7430D100CEEF31 /* Assets.xcassets */; };
+		174BECF61E7430D100CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BECF41E7430D100CEEF31 /* Main.storyboard */; };
+		174BED3B1E74569500CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED361E74569500CEEF31 /* Complex.m */; };
+		174BED6C1E74594300CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED681E74594300CEEF31 /* FGTHSBSupport.m */; };
+		174BED6D1E74594300CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED6A1E74594300CEEF31 /* fractal.m */; };
+		174BED811E745BD300CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED361E74569500CEEF31 /* Complex.m */; };
+		174BED821E745BD300CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED381E74569500CEEF31 /* FGTHSBSupport.m */; };
+		174BED831E745BD300CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED3A1E74569500CEEF31 /* fractal.m */; };
+		174BEDD61E7461C600CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED361E74569500CEEF31 /* Complex.m */; };
+		174BEDD71E7461C600CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED381E74569500CEEF31 /* FGTHSBSupport.m */; };
+		174BEDD81E7461C600CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED3A1E74569500CEEF31 /* fractal.m */; };
+		174BEDE51E74622F00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDDA1E74622F00CEEF31 /* AppDelegate.m */; };
+		174BEDE61E74622F00CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDB1E74622F00CEEF31 /* Assets.xcassets */; };
+		174BEDE71E74622F00CEEF31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */; };
+		174BEDE81E74622F00CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDF1E74622F00CEEF31 /* Main.storyboard */; };
+		174BEDEA1E74622F00CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE21E74622F00CEEF31 /* main.m */; };
+		174BEDEB1E74622F00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE41E74622F00CEEF31 /* ViewController.m */; };
+		174BEDEC1E74624B00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDDA1E74622F00CEEF31 /* AppDelegate.m */; };
+		174BEDED1E74624B00CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE21E74622F00CEEF31 /* main.m */; };
+		174BEDEE1E74624B00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE41E74622F00CEEF31 /* ViewController.m */; };
+		174BEDEF1E74626600CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDB1E74622F00CEEF31 /* Assets.xcassets */; };
+		174BEDF01E74626600CEEF31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */; };
+		174BEDF11E74626600CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDF1E74622F00CEEF31 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		171D70051E6D9D5700C406D6 /* fenXing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = fenXing.app; path = Fractal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		174BECE71E7430D100CEEF31 /* FactalMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactalMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		174BECE91E7430D100CEEF31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		174BECEA1E7430D100CEEF31 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		174BECED1E7430D100CEEF31 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		174BECEF1E7430D100CEEF31 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		174BECF01E7430D100CEEF31 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		174BECF21E7430D100CEEF31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		174BECF51E7430D100CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		174BECF71E7430D100CEEF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174BED1D1E74548B00CEEF31 /* FractalIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		174BED351E74569500CEEF31 /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
+		174BED361E74569500CEEF31 /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
+		174BED371E74569500CEEF31 /* FGTHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTHSBSupport.h; sourceTree = "<group>"; };
+		174BED381E74569500CEEF31 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
+		174BED391E74569500CEEF31 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
+		174BED3A1E74569500CEEF31 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
+		174BED651E74594300CEEF31 /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
+		174BED661E74594300CEEF31 /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
+		174BED671E74594300CEEF31 /* FGTHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTHSBSupport.h; sourceTree = "<group>"; };
+		174BED681E74594300CEEF31 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
+		174BED691E74594300CEEF31 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
+		174BED6A1E74594300CEEF31 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
+		174BEDD91E74622F00CEEF31 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FractalIOS/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		174BEDDA1E74622F00CEEF31 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = FractalIOS/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		174BEDDB1E74622F00CEEF31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FractalIOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		174BEDDE1E74622F00CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		174BEDE01E74622F00CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		174BEDE11E74622F00CEEF31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FractalIOS/Info.plist; sourceTree = SOURCE_ROOT; };
+		174BEDE21E74622F00CEEF31 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FractalIOS/main.m; sourceTree = SOURCE_ROOT; };
+		174BEDE31E74622F00CEEF31 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = FractalIOS/ViewController.h; sourceTree = SOURCE_ROOT; };
+		174BEDE41E74622F00CEEF31 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = FractalIOS/ViewController.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		171D70021E6D9D5700C406D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174BECE41E7430D100CEEF31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174BED1A1E74548B00CEEF31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		171D6FFC1E6D9D5700C406D6 = {
+			isa = PBXGroup;
+			children = (
+				174BED341E74569500CEEF31 /* Common */,
+				171D70071E6D9D5700C406D6 /* FractalIOS */,
+				174BECE81E7430D100CEEF31 /* FractalMacOS */,
+				171D70061E6D9D5700C406D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		171D70061E6D9D5700C406D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				171D70051E6D9D5700C406D6 /* fenXing.app */,
+				174BECE71E7430D100CEEF31 /* FactalMacOS.app */,
+				174BED1D1E74548B00CEEF31 /* FractalIOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		171D70071E6D9D5700C406D6 /* FractalIOS */ = {
+			isa = PBXGroup;
+			children = (
+				174BEDD91E74622F00CEEF31 /* AppDelegate.h */,
+				174BEDDA1E74622F00CEEF31 /* AppDelegate.m */,
+				174BEDDB1E74622F00CEEF31 /* Assets.xcassets */,
+				174BEDDC1E74622F00CEEF31 /* Base.lproj */,
+				174BEDE11E74622F00CEEF31 /* Info.plist */,
+				174BEDE21E74622F00CEEF31 /* main.m */,
+				174BEDE31E74622F00CEEF31 /* ViewController.h */,
+				174BEDE41E74622F00CEEF31 /* ViewController.m */,
+			);
+			name = FractalIOS;
+			path = fenXing;
+			sourceTree = "<group>";
+		};
+		174BECE81E7430D100CEEF31 /* FractalMacOS */ = {
+			isa = PBXGroup;
+			children = (
+				174BED641E74594300CEEF31 /* Common */,
+				174BECE91E7430D100CEEF31 /* AppDelegate.h */,
+				174BECEA1E7430D100CEEF31 /* AppDelegate.m */,
+				174BECEF1E7430D100CEEF31 /* ViewController.h */,
+				174BECF01E7430D100CEEF31 /* ViewController.m */,
+				174BECF21E7430D100CEEF31 /* Assets.xcassets */,
+				174BECF41E7430D100CEEF31 /* Main.storyboard */,
+				174BECF71E7430D100CEEF31 /* Info.plist */,
+				174BECEC1E7430D100CEEF31 /* Supporting Files */,
+			);
+			name = FractalMacOS;
+			path = FactalMacOS;
+			sourceTree = "<group>";
+		};
+		174BECEC1E7430D100CEEF31 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				174BECED1E7430D100CEEF31 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		174BED341E74569500CEEF31 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				174BED351E74569500CEEF31 /* Complex.h */,
+				174BED361E74569500CEEF31 /* Complex.m */,
+				174BED371E74569500CEEF31 /* FGTHSBSupport.h */,
+				174BED381E74569500CEEF31 /* FGTHSBSupport.m */,
+				174BED391E74569500CEEF31 /* fractal.h */,
+				174BED3A1E74569500CEEF31 /* fractal.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		174BED641E74594300CEEF31 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				174BED651E74594300CEEF31 /* Complex.h */,
+				174BED661E74594300CEEF31 /* Complex.m */,
+				174BED671E74594300CEEF31 /* FGTHSBSupport.h */,
+				174BED681E74594300CEEF31 /* FGTHSBSupport.m */,
+				174BED691E74594300CEEF31 /* fractal.h */,
+				174BED6A1E74594300CEEF31 /* fractal.m */,
+			);
+			path = Common;
+			sourceTree = SOURCE_ROOT;
+		};
+		174BEDDC1E74622F00CEEF31 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				174BEDDF1E74622F00CEEF31 /* Main.storyboard */,
+				174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */,
+			);
+			name = Base.lproj;
+			path = FractalIOS/Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		171D70041E6D9D5700C406D6 /* Fractal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 171D701C1E6D9D5800C406D6 /* Build configuration list for PBXNativeTarget "Fractal" */;
+			buildPhases = (
+				171D70011E6D9D5700C406D6 /* Sources */,
+				171D70021E6D9D5700C406D6 /* Frameworks */,
+				171D70031E6D9D5700C406D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fractal;
+			productName = fenXing;
+			productReference = 171D70051E6D9D5700C406D6 /* fenXing.app */;
+			productType = "com.apple.product-type.application";
+		};
+		174BECE61E7430D100CEEF31 /* FactalMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 174BECFA1E7430D100CEEF31 /* Build configuration list for PBXNativeTarget "FactalMacOS" */;
+			buildPhases = (
+				174BECE31E7430D100CEEF31 /* Sources */,
+				174BECE41E7430D100CEEF31 /* Frameworks */,
+				174BECE51E7430D100CEEF31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FactalMacOS;
+			productName = FactalMacOS;
+			productReference = 174BECE71E7430D100CEEF31 /* FactalMacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		174BED1C1E74548B00CEEF31 /* FractalIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 174BED311E74548B00CEEF31 /* Build configuration list for PBXNativeTarget "FractalIOS" */;
+			buildPhases = (
+				174BED191E74548B00CEEF31 /* Sources */,
+				174BED1A1E74548B00CEEF31 /* Frameworks */,
+				174BED1B1E74548B00CEEF31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FractalIOS;
+			productName = FractalIOS;
+			productReference = 174BED1D1E74548B00CEEF31 /* FractalIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		171D6FFD1E6D9D5700C406D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Coding;
+				TargetAttributes = {
+					171D70041E6D9D5700C406D6 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TQWU9HD7N3;
+						ProvisioningStyle = Automatic;
+					};
+					174BECE61E7430D100CEEF31 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TQWU9HD7N3;
+						ProvisioningStyle = Automatic;
+					};
+					174BED1C1E74548B00CEEF31 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TQWU9HD7N3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 171D70001E6D9D5700C406D6 /* Build configuration list for PBXProject "Fractal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 171D6FFC1E6D9D5700C406D6;
+			productRefGroup = 171D70061E6D9D5700C406D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				171D70041E6D9D5700C406D6 /* Fractal */,
+				174BECE61E7430D100CEEF31 /* FactalMacOS */,
+				174BED1C1E74548B00CEEF31 /* FractalIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		171D70031E6D9D5700C406D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174BEDE81E74622F00CEEF31 /* Main.storyboard in Resources */,
+				174BEDE61E74622F00CEEF31 /* Assets.xcassets in Resources */,
+				174BEDE71E74622F00CEEF31 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174BECE51E7430D100CEEF31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174BECF31E7430D100CEEF31 /* Assets.xcassets in Resources */,
+				174BECF61E7430D100CEEF31 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174BED1B1E74548B00CEEF31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174BEDEF1E74626600CEEF31 /* Assets.xcassets in Resources */,
+				174BEDF01E74626600CEEF31 /* LaunchScreen.storyboard in Resources */,
+				174BEDF11E74626600CEEF31 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		171D70011E6D9D5700C406D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174BEDEB1E74622F00CEEF31 /* ViewController.m in Sources */,
+				174BEDEA1E74622F00CEEF31 /* main.m in Sources */,
+				174BEDE51E74622F00CEEF31 /* AppDelegate.m in Sources */,
+				174BED3B1E74569500CEEF31 /* Complex.m in Sources */,
+				174BED6D1E74594300CEEF31 /* fractal.m in Sources */,
+				174BED6C1E74594300CEEF31 /* FGTHSBSupport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174BECE31E7430D100CEEF31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174BEDD61E7461C600CEEF31 /* Complex.m in Sources */,
+				174BEDD71E7461C600CEEF31 /* FGTHSBSupport.m in Sources */,
+				174BEDD81E7461C600CEEF31 /* fractal.m in Sources */,
+				174BECF11E7430D100CEEF31 /* ViewController.m in Sources */,
+				174BECEE1E7430D100CEEF31 /* main.m in Sources */,
+				174BECEB1E7430D100CEEF31 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174BED191E74548B00CEEF31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174BEDEC1E74624B00CEEF31 /* AppDelegate.m in Sources */,
+				174BEDED1E74624B00CEEF31 /* main.m in Sources */,
+				174BEDEE1E74624B00CEEF31 /* ViewController.m in Sources */,
+				174BED811E745BD300CEEF31 /* Complex.m in Sources */,
+				174BED821E745BD300CEEF31 /* FGTHSBSupport.m in Sources */,
+				174BED831E745BD300CEEF31 /* fractal.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		174BECF41E7430D100CEEF31 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174BECF51E7430D100CEEF31 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174BEDDE1E74622F00CEEF31 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		174BEDDF1E74622F00CEEF31 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174BEDE01E74622F00CEEF31 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		171D701A1E6D9D5800C406D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		171D701B1E6D9D5800C406D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		171D701D1E6D9D5800C406D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TQWU9HD7N3;
+				INFOPLIST_FILE = "$(SRCROOT)/FractalIOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fglt.fenXing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		171D701E1E6D9D5800C406D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TQWU9HD7N3;
+				INFOPLIST_FILE = "$(SRCROOT)/FractalIOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fglt.fenXing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		174BECF81E7430D100CEEF31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TQWU9HD7N3;
+				INFOPLIST_FILE = FactalMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fglt.FractalMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		174BECF91E7430D100CEEF31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TQWU9HD7N3;
+				INFOPLIST_FILE = FactalMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fglt.FractalMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		174BED321E74548B00CEEF31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TQWU9HD7N3;
+				INFOPLIST_FILE = "$(SRCROOT)/FractalIOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fglt.FractalIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		174BED331E74548B00CEEF31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TQWU9HD7N3;
+				INFOPLIST_FILE = "$(SRCROOT)/FractalIOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fglt.FractalIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		171D70001E6D9D5700C406D6 /* Build configuration list for PBXProject "Fractal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171D701A1E6D9D5800C406D6 /* Debug */,
+				171D701B1E6D9D5800C406D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		171D701C1E6D9D5800C406D6 /* Build configuration list for PBXNativeTarget "Fractal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171D701D1E6D9D5800C406D6 /* Debug */,
+				171D701E1E6D9D5800C406D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		174BECFA1E7430D100CEEF31 /* Build configuration list for PBXNativeTarget "FactalMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				174BECF81E7430D100CEEF31 /* Debug */,
+				174BECF91E7430D100CEEF31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		174BED311E74548B00CEEF31 /* Build configuration list for PBXNativeTarget "FractalIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				174BED321E74548B00CEEF31 /* Debug */,
+				174BED331E74548B00CEEF31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 171D6FFD1E6D9D5700C406D6 /* Project object */;
+}
