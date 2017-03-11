@@ -113,14 +113,6 @@ void RGBToHSV(const CGFloat * bgr, CGFloat*hsv, BOOL preserveHS)
             hsv[0] = hue;                               // 0.0 and 1.0 hues are actually both the same (red)
     }
 }
-//------------------------------------------------------------------------------
-#pragma mark	Square/Bar image creation
-//------------------------------------------------------------------------------
-
-static UInt8 blend(UInt8 value, UInt8 percentIn255)
-{
-	return (UInt8) ((int) value * percentIn255 / 255);
-}
 
 //------------------------------------------------------------------------------
 
@@ -136,50 +128,6 @@ static CGContextRef createBGRxImageContext(int w, int h, void* data)
 	CGColorSpaceRelease(colorSpace);
 	
 	return context;
-}
-
-
-//------------------------------------------------------------------------------
-
-
-UIImage* HSVBarContentImage(FGTColorHSVIndex colorHSVIndex, CGFloat hsv[3])
-{
-	UInt8 data[256 * 4];
-	
-	// Set up the bitmap context for filling with color:
-	
-	CGContextRef context = createBGRxImageContext(256, 1, data);
-	
-	if (context == nil)
-		return nil;
-	
-	// Draw into context here:
-	
-	UInt8* ptr = CGBitmapContextGetData(context);
-	if (ptr == nil) {
-		CGContextRelease(context);
-		return nil;
-	}
-	
-	CGFloat bgr[3];
-	for (int x = 0; x < 256; ++x) {
-		hsv[colorHSVIndex] = (CGFloat) x / 255.0f;
-		
-		HSVtoRGB(hsv, bgr);
-		ptr[0] = (UInt8) (bgr[0] * 255.0f);
-		ptr[1] = (UInt8) (bgr[1] * 255.0f);
-		ptr[2] = (UInt8) (bgr[2] * 255.0f);
-		
-		ptr += 4;
-	}
-	
-	// Return an image of the context's content:
-	
-	CGImageRef cgimage = CGBitmapContextCreateImage(context);
-	UIImage* image = [UIImage imageWithCGImage:cgimage];
-	CGContextRelease(context);
-    CGImageRelease(cgimage);
-	return image;
 }
 
 void HSVFromUIColor(UIColor* color, CGFloat hsv[3])

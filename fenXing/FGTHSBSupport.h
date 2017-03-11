@@ -30,27 +30,6 @@ void RGBToHSV(const CGFloat *bgr, CGFloat *hsv,
 
 //------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
-
-typedef enum {
-	FGTColorHSVIndexHue = 0,
-	FGTColorHSVIndexSaturation = 1,
-	FGTColorHSVIndexBrightness = 2,
-} FGTColorHSVIndex;
-
-typedef enum {
-    FGTColorIndexBlue = 0,
-    FGTColorIndexGreen = 1,
-    FGTColorIndexRed = 2,
-} FGTColorIndex;
-
-UIImage* HSVBarContentImage(FGTColorHSVIndex colorHSVIndex, CGFloat hsv[3]);
-	// Generates an image where the specified barComponentIndex (0=H, 1=S, 2=V)
-	// varies across the x-axis of the 256x1 pixel image and the other components
-	// remain at the constant value specified in the hsv array.
-
-//------------------------------------------------------------------------------
-
 void HSVFromUIColor(UIColor* color, CGFloat hsv[3]);
 
 
