@@ -139,6 +139,7 @@
 - (void)run2
 {
     int loopsStep = 15;
+     _progressView.progress = (CGFloat)_loops/loopsStep/_ktimes;
     if(_loops>=_ktimes*loopsStep) {
         [_timer invalidate];
         _loops = 0;
@@ -150,7 +151,7 @@
         return;
     }
     
-    _progressView.progress = (CGFloat)_loops/loopsStep/_ktimes;
+   
     size_t bytesPerRow = _iwidth * 4;
     
     void* data = malloc(_iwidth * _iheight * 4);
