@@ -15,6 +15,7 @@
 		171D70181E6D9D5800C406D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171D70161E6D9D5800C406D6 /* LaunchScreen.storyboard */; };
 		171D70211E6D9E0700C406D6 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 171D70201E6D9E0700C406D6 /* Complex.m */; };
 		171D70271E7035F100C406D6 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 171D70261E7035F100C406D6 /* FGTHSBSupport.m */; };
+		174A0CAD1E7418380049D504 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174A0CAC1E7418380049D504 /* fractal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		171D70201E6D9E0700C406D6 /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
 		171D70251E7035F100C406D6 /* FGTHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTHSBSupport.h; sourceTree = "<group>"; };
 		171D70261E7035F100C406D6 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
+		174A0CAB1E7418380049D504 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
+		174A0CAC1E7418380049D504 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 		171D70071E6D9D5700C406D6 /* fenXing */ = {
 			isa = PBXGroup;
 			children = (
+				174A0CAB1E7418380049D504 /* fractal.h */,
+				174A0CAC1E7418380049D504 /* fractal.m */,
 				171D70251E7035F100C406D6 /* FGTHSBSupport.h */,
 				171D70261E7035F100C406D6 /* FGTHSBSupport.m */,
 				171D700B1E6D9D5700C406D6 /* AppDelegate.h */,
@@ -166,6 +171,7 @@
 				171D70101E6D9D5700C406D6 /* ViewController.m in Sources */,
 				171D700D1E6D9D5700C406D6 /* AppDelegate.m in Sources */,
 				171D700A1E6D9D5700C406D6 /* main.m in Sources */,
+				174A0CAD1E7418380049D504 /* fractal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
