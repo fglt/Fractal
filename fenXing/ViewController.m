@@ -26,12 +26,18 @@
 @property (weak, nonatomic) IBOutlet UITextField *crText;
 @property (weak, nonatomic) IBOutlet UITextField *ciText;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UITextField *timesText;
+@property (weak, nonatomic) IBOutlet UISwitch *typeSwitch;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+
 @property (nonatomic, strong) CADisplayLink *timer;
 @property (nonatomic, strong) NSMutableArray *complexArray;
+@property (nonatomic, strong) NSMutableArray *timesArray;
 @property (nonatomic) int iwidth;
 @property (nonatomic) int iheight;
 @property (nonatomic) int loops;
 @property (nonatomic, strong) Complex *c;
+@property (nonatomic) int ktimes;
 
 //@property (nonatomic) int scale;
 @end
@@ -41,19 +47,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _imgView.contentMode = UIViewContentModeCenter;
+    _iwidth = 602;
+    _iheight = 602;
     self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
+    self.timesArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
     _loops = 0;
     NSLog(@"cpu numbers: %d",countOfCores());
-//    _scale = [UIScreen mainScreen].scale;
-//    _scale = 1;
-    // Do any additional setup after loading the view, typically from a nib.
-//    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 360, 360)];
-//    _imageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
-//    
-//    _z0RLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_imageView.frame) + 20, 60, 40)];
-//    _z0RLabel.text = @"Z0";
-//    _z0RLabel.autoresizingMask =
-    
 
 }
 
@@ -64,98 +63,70 @@
 }
 - (IBAction)runF:(id)sender {
     _c = [[Complex alloc] initWithReal:[_crText.text doubleValue] image:[_ciText.text doubleValue]];
-    if(_loops==0){
-        self.timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(run2)];
-        [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    _ktimes = [_timesText.text intValue];
+    
+    if(_typeSwitch.isOn){
+        [self fractal:_ktimes];
+    }else{
+        
+        if(_loops==0){
+            _progressView.progress = 0;
+            self.timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(run2)];
+            [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+        }
     }
 }
 
-- (void)run
+- (void)fractal:(int) times
 {
     NSDate *start;
     start = [NSDate date];
 
-    int iwidth=301, iheight=301;
-    size_t bytesPerRow = iwidth * 4;
+    size_t bytesPerRow = _iwidth * 4;
     
-    void* data = malloc(iwidth * iheight * 4);
+    void* data = malloc(_iwidth * _iheight * 4);
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     
     CGBitmapInfo kBGRxBitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
     
-    CGContextRef context = CGBitmapContextCreate(data,iwidth, iheight, 8, bytesPerRow, colorSpace, kBGRxBitmapInfo);
+    CGContextRef context = CGBitmapContextCreate(data,_iwidth, _iheight, 8, bytesPerRow, colorSpace, kBGRxBitmapInfo);
     
     CGColorSpaceRelease(colorSpace);
     
-    int halfHeight = iheight/2;
-
-//    UInt8 bgr[3] = {0};
-//    UInt8 *ptr= data;
-//    for(int i=0 ; i<iheight; i++){
-//        Complex * z;
-//        Complex *z0;
-//        for(int j= 0; j<iwidth; j++){
-//            z0 = [[Complex alloc] initWithReal:(CGFloat)j*4/iwidth-2 image:(CGFloat)i*4/iheight-2];
-//            z= fractal(z0, c);
-//            colorForFractal(z, bgr);
-//            ptr[0]= bgr[0];
-//            ptr[1] = bgr[1];
-//            ptr[2] = bgr[2];
-//            ptr += 4;
-//        }
-//    }
-//    
-//    CGImageRef cgimage = CGBitmapContextCreateImage(context);
-//    UIImage* image = [UIImage imageWithCGImage:cgimage scale:_scale orientation:UIImageOrientationUp];
-//    CGContextRelease(context);
-//    CGImageRelease(cgimage);
-//    _imgView.image = image;
-//    double de = [[NSDate date] timeIntervalSinceDate:start];
-//    
-//    _timeLabel.text = [NSString stringWithFormat:@"%f", de];
-
-
-
+    int threadCount = countOfCores();
+    int heightPerThread = _iheight/threadCount;
+    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_group_t group = dispatch_group_create();
-    dispatch_group_async(group, queue, ^{
-        UInt8 bgr[3] = {0};
-        UInt8 *ptr= data;
-        for(int i=0 ; i<halfHeight; i++){
-            Complex * z;
-            Complex *z0;
-            for(int j= 0; j<iwidth; j++){
-                z0 = [[Complex alloc] initWithReal:(CGFloat)j*4/iwidth-2 image:(CGFloat)i*4/iheight-2];
-                z= fractal(z0, _c);
-                colorForFractal(z, bgr);
-                ptr[0]= bgr[0];
-                ptr[1] = bgr[1];
-                ptr[2] = bgr[2];
-                ptr += 4;
+    for(int count=0; count<threadCount; count++){
+        dispatch_group_async(group, queue, ^{
+            UInt8 bgr[3] = {0};
+            UInt8 *ptr= data+count*bytesPerRow*heightPerThread;
+            int max =(count+1)*heightPerThread+(_iheight%threadCount)*((count+1)/threadCount);
+            for(int i=heightPerThread*count ; i<max; i++){
+                Complex * z;
+                Complex *z0;
+                for(int j= 0; j<_iwidth; j++){
+                    int m =0;
+                    z0 = [[Complex alloc] initWithReal:(CGFloat)j*3/_iwidth-1.5 image:(CGFloat)i*3/_iheight-1.5];
+                    z = z0;
+                    for(; m <_ktimes; m++){
+                        if([z modelSquare]>=256) break;
+                        z =  [[z square] addWith:_c];
+                    }
+                    color(m, bgr,_ktimes*1.2);
+                    ptr[0]= bgr[0];
+                    ptr[1] = bgr[1];
+                    ptr[2] = bgr[2];
+                    ptr += 4;
+                }
             }
-        }
-    });
-    dispatch_group_async(group, queue, ^{
-        UInt8 bgr[3] = {0};
-        UInt8 *ptr= data+(halfHeight)*bytesPerRow;
-        for(int i=halfHeight ; i<iheight; i++){
-            Complex * z;
-            Complex *z0;
-            for(int j= 0; j<iwidth; j++){
-                z0 = [[Complex alloc] initWithReal:(CGFloat)j*4/iwidth-2 image:(CGFloat)i*4/iheight-2];
-                z= fractal(z0, _c);
-                colorForFractal(z, bgr);
-                ptr[0]= bgr[0];
-                ptr[1] = bgr[1];
-                ptr[2] = bgr[2];
-                ptr += 4;
-            }
-        }
-    });
+        });
+    }
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         CGImageRef cgimage = CGBitmapContextCreateImage(context);
-        UIImage* image = [UIImage imageWithCGImage:cgimage scale:1 orientation:UIImageOrientationUp];
+        UIImage* image = [UIImage imageWithCGImage:cgimage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
         CGContextRelease(context);
         CGImageRelease(cgimage);
         _imgView.image = image;
@@ -165,103 +136,93 @@
     });
 }
 
-Complex * fractal(Complex * z, Complex * c)
+- (void)run2
+{
+    int loopsStep = 15;
+    if(_loops>=_ktimes*loopsStep) {
+        [_timer invalidate];
+        _loops = 0;
+        return;
+    }
+    
+    if(_loops%loopsStep !=0) {
+        _loops++;
+        return;
+    }
+    
+    _progressView.progress = (CGFloat)_loops/loopsStep/_ktimes;
+    size_t bytesPerRow = _iwidth * 4;
+    
+    void* data = malloc(_iwidth * _iheight * 4);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    CGBitmapInfo kBGRxBitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
+    
+    CGContextRef context = CGBitmapContextCreate(data,_iwidth, _iheight, 8, bytesPerRow, colorSpace, kBGRxBitmapInfo);
+    
+    CGColorSpaceRelease(colorSpace);
+    
+    
+    UInt8 *ptr= data;
+    for(int i=0 ; i<_iheight; i++){
+        for(int j= 0; j<_iwidth; j++){
+            UInt8 bgr[3] = {0};
+            int index = j+i*_iwidth;
+            Complex *tmpc;
+            if(_loops==0){
+                _complexArray[index] = [[Complex alloc] initWithReal:(CGFloat)j*3/_iwidth-1.5 image:(CGFloat)i*3/_iheight-1.5];
+                _timesArray[index] = [NSNumber numberWithInt:0];
+            }else{
+                tmpc = _complexArray[index];
+                if([tmpc modelSquare]<256){
+                    _complexArray[index] = [[tmpc square] addWith:_c];
+                    _timesArray[index] = [NSNumber numberWithInt:[_timesArray[index] intValue] +1] ;
+                }
+            }
+
+            CGFloat colorValue= [_timesArray[index] intValue];
+
+            color(colorValue, bgr, _ktimes*1.2);
+
+            ptr[0] = bgr[0];
+            ptr[1] = bgr[1];
+            ptr[2] = bgr[2];
+            ptr += 4;
+        }
+    }
+
+    CGImageRef cgimage = CGBitmapContextCreateImage(context);
+    UIImage* image = [UIImage imageWithCGImage:cgimage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+    _imgView.image = image;
+    CGImageRelease(cgimage);
+    CGContextRelease(context);
+    
+    _loops++;
+}
+
+Complex * fractal(Complex * z, Complex * c, int k)
 {
     int i=0;
-    for(; i <200; i++){
-        if([z modelSquare]>18) break;
+    for(; i <k; i++){
+        if([z modelSquare]>40) break;
         z =  [[z square] addWith:c];
     }
     
     return z;
 }
 
-- (void)run2
+void color(CGFloat value, UInt8 *bgr,CGFloat maxValue)
 {
-    if(_loops>=300) {
-        [_timer invalidate];
-        _loops = 0;
-        return;
-    }
-    
-    if(_loops%30 !=0) {
-        _loops++;
-        return;
-    }
-    
-    int iwidth=301, iheight=301;
-    size_t bytesPerRow = iwidth * 4;
-    
-    void* data = malloc(iwidth * iheight * 4);
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    CGBitmapInfo kBGRxBitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
-    
-    CGContextRef context = CGBitmapContextCreate(data,iwidth, iheight, 8, bytesPerRow, colorSpace, kBGRxBitmapInfo);
-    
-    CGColorSpaceRelease(colorSpace);
-    
-    UInt8 bgr[3] = {0};
-    UInt8 *ptr= data;
-    if(_loops==0){
-        for(int i=0 ; i<iheight; i++){
-            Complex *z;
-            for(int j= 0; j<iwidth; j++){
-                z = [[Complex alloc] initWithReal:(CGFloat)j*4/iwidth-2 image:(CGFloat)i*4/iheight-2];
-                _complexArray[j+i*iwidth]= z;
-                colorForFractal(z, bgr);
-                ptr[0]= bgr[0];
-                ptr[1] = bgr[1];
-                ptr[2] = bgr[2];
-                ptr += 4;
-            }
-        }
-        CGImageRef cgimage = CGBitmapContextCreateImage(context);
-        UIImage* image = [UIImage imageWithCGImage:cgimage scale:1 orientation:UIImageOrientationUp];
-        _imgView.image = image;
-        CGImageRelease(cgimage);
-        CGContextRelease(context);
-    }else{
-        for(int i=0 ; i<iheight; i++){
-            for(int j= 0; j<iwidth; j++){
-                int index = j+i*iwidth;
-                Complex *tmpc = _complexArray[index];
-                if([tmpc modelSquare]>20){
-                    ptr += 4;
-                    continue;
-                }
-                _complexArray[index] = [[tmpc square] addWith:_c];
-                colorForFractal(_complexArray[index], bgr);
-                ptr[0] = bgr[0];
-                ptr[1] = bgr[1];
-                ptr[2] = bgr[2];
-                ptr += 4;
-            }
-        }
-    
-        CGImageRef cgimage = CGBitmapContextCreateImage(context);
-        UIImage* image = [UIImage imageWithCGImage:cgimage scale:1 orientation:UIImageOrientationUp];
-        _imgView.image = image;
-        CGImageRelease(cgimage);
-        CGContextRelease(context);
-    }
-    _loops++;
-}
-
-
-
-void colorForFractal(Complex *c, UInt8 *bgr)
-{
-    CGFloat h= [c model];
-    int maxM = 20;
-    if(h>maxM) h= maxM;
-   
-    CGFloat hsv[3] = {h/maxM,1,1};
+    CGFloat hsv[3] = {0,1,1};
+    hsv[0] =  value/maxValue;
+//    hsv[0] = value<=5?  value/maxValue : value/maxValue+exp(value-maxValue)/2;
+//    hsv[0] = hsv[0]<=1? hsv[0]:1;
     CGFloat bgrf[3] ={0,0,0};
     HSVtoRGB(hsv, bgrf);
     bgr[0] = bgrf[0]*255;
     bgr[1] = bgrf[1]*255;
     bgr[2] = bgrf[2]*255;
+    
 }
 
 unsigned int countOfCores()
