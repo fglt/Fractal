@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FactalMacOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>factal.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>fenXing.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>171D70041E6D9D5700C406D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>174BECE61E7430D100CEEF31</key>
 		<dict>
 			<key>primary</key>
 			<true/>

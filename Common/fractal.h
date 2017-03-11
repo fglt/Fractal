@@ -6,9 +6,11 @@
 //  Copyright © 2017 Coding. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
+@import CoreGraphics;
+#import "Complex.h"
 
-Complex * fractal(Complex * z, Complex * c, int k);
+Complex * FGFractal(Complex * z, Complex * c, int k);
 
 void color(CGFloat value, UInt8 *bgr,CGFloat maxValue);
 

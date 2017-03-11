@@ -6,7 +6,8 @@
 //  Copyright © 2016 Coding. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
+@import CoreGraphics;
 
 //------------------------------------------------------------------------------
 
@@ -28,8 +29,5 @@ void HSVtoRGB(const CGFloat*hsv, CGFloat* bgr);
 void RGBToHSV(const CGFloat *bgr, CGFloat *hsv,
               BOOL preserveHS);
 
-//------------------------------------------------------------------------------
-
-void HSVFromUIColor(UIColor* color, CGFloat hsv[3]);
 
 

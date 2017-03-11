@@ -6,7 +6,8 @@
 //  Copyright © 2017 Coding. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
+@import CoreGraphics;
 
 @interface Complex : NSObject
 

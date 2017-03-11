@@ -114,25 +114,4 @@ void RGBToHSV(const CGFloat * bgr, CGFloat*hsv, BOOL preserveHS)
     }
 }
 
-void HSVFromUIColor(UIColor* color, CGFloat hsv[3])
-{
-    CGColorRef colorRef = [color CGColor];
-    
-    const CGFloat* components = CGColorGetComponents(colorRef);
-    size_t numComponents = CGColorGetNumberOfComponents(colorRef);
-    
-    CGFloat bgr[3];
-    
-    if (numComponents < 3) {
-        bgr[0] = bgr[1] = bgr[2] = components[0];
-    }
-    else {
-        bgr[2] = components[0];
-        bgr[1] = components[1];
-        bgr[0] = components[2];
-    }
-    
-    RGBToHSV(bgr, hsv, YES);
-    //NSLog(@"%f: %f: %f",*h, *s,*v);
-}
 

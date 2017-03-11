@@ -6,13 +6,12 @@
 //  Copyright © 2017 Coding. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Complex.h"
+#import "fractal.h"
 #import "FGTHSBSupport.h"
 #import <mach-o/arch.h>
 #import <sys/sysctl.h>
 
-Complex * fractal(Complex * z, Complex * c, int k)
+Complex * FGFractal(Complex * z, Complex * c, int k)
 {
     int i=0;
     for(; i <k; i++){

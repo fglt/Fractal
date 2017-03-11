@@ -13,9 +13,17 @@
 		171D70131E6D9D5700C406D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171D70111E6D9D5700C406D6 /* Main.storyboard */; };
 		171D70151E6D9D5800C406D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171D70141E6D9D5800C406D6 /* Assets.xcassets */; };
 		171D70181E6D9D5800C406D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171D70161E6D9D5800C406D6 /* LaunchScreen.storyboard */; };
-		171D70211E6D9E0700C406D6 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 171D70201E6D9E0700C406D6 /* Complex.m */; };
-		171D70271E7035F100C406D6 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 171D70261E7035F100C406D6 /* FGTHSBSupport.m */; };
-		174A0CAD1E7418380049D504 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174A0CAC1E7418380049D504 /* fractal.m */; };
+		174BECEB1E7430D100CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECEA1E7430D100CEEF31 /* AppDelegate.m */; };
+		174BECEE1E7430D100CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECED1E7430D100CEEF31 /* main.m */; };
+		174BECF11E7430D100CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECF01E7430D100CEEF31 /* ViewController.m */; };
+		174BECF31E7430D100CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BECF21E7430D100CEEF31 /* Assets.xcassets */; };
+		174BECF61E7430D100CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BECF41E7430D100CEEF31 /* Main.storyboard */; };
+		174BED0C1E74383000CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED071E74383000CEEF31 /* Complex.m */; };
+		174BED0D1E74383000CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED091E74383000CEEF31 /* FGTHSBSupport.m */; };
+		174BED0E1E74383000CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED0B1E74383000CEEF31 /* fractal.m */; };
+		174BED161E74385D00CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED111E74385D00CEEF31 /* Complex.m */; };
+		174BED171E74385D00CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED131E74385D00CEEF31 /* FGTHSBSupport.m */; };
+		174BED181E74385D00CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED151E74385D00CEEF31 /* fractal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,16 +37,38 @@
 		171D70141E6D9D5800C406D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		171D70171E6D9D5800C406D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		171D70191E6D9D5800C406D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		171D701F1E6D9E0600C406D6 /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
-		171D70201E6D9E0700C406D6 /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
-		171D70251E7035F100C406D6 /* FGTHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTHSBSupport.h; sourceTree = "<group>"; };
-		171D70261E7035F100C406D6 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
-		174A0CAB1E7418380049D504 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
-		174A0CAC1E7418380049D504 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
+		174BECE71E7430D100CEEF31 /* FactalMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactalMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		174BECE91E7430D100CEEF31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		174BECEA1E7430D100CEEF31 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		174BECED1E7430D100CEEF31 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		174BECEF1E7430D100CEEF31 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		174BECF01E7430D100CEEF31 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		174BECF21E7430D100CEEF31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		174BECF51E7430D100CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		174BECF71E7430D100CEEF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174BED061E74383000CEEF31 /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
+		174BED071E74383000CEEF31 /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
+		174BED081E74383000CEEF31 /* FGTHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTHSBSupport.h; sourceTree = "<group>"; };
+		174BED091E74383000CEEF31 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
+		174BED0A1E74383000CEEF31 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
+		174BED0B1E74383000CEEF31 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
+		174BED101E74385D00CEEF31 /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
+		174BED111E74385D00CEEF31 /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
+		174BED121E74385D00CEEF31 /* FGTHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTHSBSupport.h; sourceTree = "<group>"; };
+		174BED131E74385D00CEEF31 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
+		174BED141E74385D00CEEF31 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
+		174BED151E74385D00CEEF31 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		171D70021E6D9D5700C406D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174BECE41E7430D100CEEF31 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				171D70071E6D9D5700C406D6 /* fenXing */,
+				174BECE81E7430D100CEEF31 /* FactalMacOS */,
 				171D70061E6D9D5700C406D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				171D70051E6D9D5700C406D6 /* fenXing.app */,
+				174BECE71E7430D100CEEF31 /* FactalMacOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,10 +99,7 @@
 		171D70071E6D9D5700C406D6 /* fenXing */ = {
 			isa = PBXGroup;
 			children = (
-				174A0CAB1E7418380049D504 /* fractal.h */,
-				174A0CAC1E7418380049D504 /* fractal.m */,
-				171D70251E7035F100C406D6 /* FGTHSBSupport.h */,
-				171D70261E7035F100C406D6 /* FGTHSBSupport.m */,
+				174BED0F1E74385D00CEEF31 /* Common */,
 				171D700B1E6D9D5700C406D6 /* AppDelegate.h */,
 				171D700C1E6D9D5700C406D6 /* AppDelegate.m */,
 				171D700E1E6D9D5700C406D6 /* ViewController.h */,
@@ -80,8 +109,6 @@
 				171D70161E6D9D5800C406D6 /* LaunchScreen.storyboard */,
 				171D70191E6D9D5800C406D6 /* Info.plist */,
 				171D70081E6D9D5700C406D6 /* Supporting Files */,
-				171D701F1E6D9E0600C406D6 /* Complex.h */,
-				171D70201E6D9E0700C406D6 /* Complex.m */,
 			);
 			path = fenXing;
 			sourceTree = "<group>";
@@ -93,6 +120,56 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		174BECE81E7430D100CEEF31 /* FactalMacOS */ = {
+			isa = PBXGroup;
+			children = (
+				174BED051E74383000CEEF31 /* Common */,
+				174BECE91E7430D100CEEF31 /* AppDelegate.h */,
+				174BECEA1E7430D100CEEF31 /* AppDelegate.m */,
+				174BECEF1E7430D100CEEF31 /* ViewController.h */,
+				174BECF01E7430D100CEEF31 /* ViewController.m */,
+				174BECF21E7430D100CEEF31 /* Assets.xcassets */,
+				174BECF41E7430D100CEEF31 /* Main.storyboard */,
+				174BECF71E7430D100CEEF31 /* Info.plist */,
+				174BECEC1E7430D100CEEF31 /* Supporting Files */,
+			);
+			path = FactalMacOS;
+			sourceTree = "<group>";
+		};
+		174BECEC1E7430D100CEEF31 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				174BECED1E7430D100CEEF31 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		174BED051E74383000CEEF31 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				174BED061E74383000CEEF31 /* Complex.h */,
+				174BED071E74383000CEEF31 /* Complex.m */,
+				174BED081E74383000CEEF31 /* FGTHSBSupport.h */,
+				174BED091E74383000CEEF31 /* FGTHSBSupport.m */,
+				174BED0A1E74383000CEEF31 /* fractal.h */,
+				174BED0B1E74383000CEEF31 /* fractal.m */,
+			);
+			path = Common;
+			sourceTree = SOURCE_ROOT;
+		};
+		174BED0F1E74385D00CEEF31 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				174BED101E74385D00CEEF31 /* Complex.h */,
+				174BED111E74385D00CEEF31 /* Complex.m */,
+				174BED121E74385D00CEEF31 /* FGTHSBSupport.h */,
+				174BED131E74385D00CEEF31 /* FGTHSBSupport.m */,
+				174BED141E74385D00CEEF31 /* fractal.h */,
+				174BED151E74385D00CEEF31 /* fractal.m */,
+			);
+			path = Common;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -114,6 +191,23 @@
 			productReference = 171D70051E6D9D5700C406D6 /* fenXing.app */;
 			productType = "com.apple.product-type.application";
 		};
+		174BECE61E7430D100CEEF31 /* FactalMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 174BECFA1E7430D100CEEF31 /* Build configuration list for PBXNativeTarget "FactalMacOS" */;
+			buildPhases = (
+				174BECE31E7430D100CEEF31 /* Sources */,
+				174BECE41E7430D100CEEF31 /* Frameworks */,
+				174BECE51E7430D100CEEF31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FactalMacOS;
+			productName = FactalMacOS;
+			productReference = 174BECE71E7430D100CEEF31 /* FactalMacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -124,6 +218,11 @@
 				ORGANIZATIONNAME = Coding;
 				TargetAttributes = {
 					171D70041E6D9D5700C406D6 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TQWU9HD7N3;
+						ProvisioningStyle = Automatic;
+					};
+					174BECE61E7430D100CEEF31 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = TQWU9HD7N3;
 						ProvisioningStyle = Automatic;
@@ -144,6 +243,7 @@
 			projectRoot = "";
 			targets = (
 				171D70041E6D9D5700C406D6 /* fenXing */,
+				174BECE61E7430D100CEEF31 /* FactalMacOS */,
 			);
 		};
 /* End PBXProject section */
@@ -159,6 +259,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		174BECE51E7430D100CEEF31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174BECF31E7430D100CEEF31 /* Assets.xcassets in Resources */,
+				174BECF61E7430D100CEEF31 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -166,12 +275,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				171D70271E7035F100C406D6 /* FGTHSBSupport.m in Sources */,
-				171D70211E6D9E0700C406D6 /* Complex.m in Sources */,
+				174BED171E74385D00CEEF31 /* FGTHSBSupport.m in Sources */,
+				174BED161E74385D00CEEF31 /* Complex.m in Sources */,
 				171D70101E6D9D5700C406D6 /* ViewController.m in Sources */,
 				171D700D1E6D9D5700C406D6 /* AppDelegate.m in Sources */,
 				171D700A1E6D9D5700C406D6 /* main.m in Sources */,
-				174A0CAD1E7418380049D504 /* fractal.m in Sources */,
+				174BED181E74385D00CEEF31 /* fractal.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174BECE31E7430D100CEEF31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174BED0D1E74383000CEEF31 /* FGTHSBSupport.m in Sources */,
+				174BED0C1E74383000CEEF31 /* Complex.m in Sources */,
+				174BECF11E7430D100CEEF31 /* ViewController.m in Sources */,
+				174BECEE1E7430D100CEEF31 /* main.m in Sources */,
+				174BECEB1E7430D100CEEF31 /* AppDelegate.m in Sources */,
+				174BED0E1E74383000CEEF31 /* fractal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +314,14 @@
 				171D70171E6D9D5800C406D6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		174BECF41E7430D100CEEF31 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174BECF51E7430D100CEEF31 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -313,6 +443,38 @@
 			};
 			name = Release;
 		};
+		174BECF81E7430D100CEEF31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TQWU9HD7N3;
+				INFOPLIST_FILE = FactalMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fglt.FactalMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		174BECF91E7430D100CEEF31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TQWU9HD7N3;
+				INFOPLIST_FILE = FactalMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fglt.FactalMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -333,6 +495,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		174BECFA1E7430D100CEEF31 /* Build configuration list for PBXNativeTarget "FactalMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				174BECF81E7430D100CEEF31 /* Debug */,
+				174BECF91E7430D100CEEF31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
