@@ -19,7 +19,7 @@
     return self;
 }
 
-- (Complex *)addWith:(Complex *)complex
+- (Complex *)addWith:(Complex const*)complex
 {
     Complex *c = [[Complex alloc] initWithReal:self.real+complex.real image:self.image+complex.image ];
     

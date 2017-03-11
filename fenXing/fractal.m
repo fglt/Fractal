@@ -45,3 +45,28 @@ unsigned int countOfCores()
     
     return ncpu;
 }
+
+
+void fractalStep(int width, int height, int startY, int endY, int times, Complex const* c, UInt8 *ptr)
+{
+    UInt8 bgr[3] = {0};
+    
+    for(int i=startY ; i<endY; i++){
+        Complex * z;
+        Complex *z0;
+        for(int j= 0; j<width; j++){
+            int m =0;
+            z0 = [[Complex alloc] initWithReal:(CGFloat)j*3/width-1.5 image:(CGFloat)i*3/height-1.5];
+            z = z0;
+            for(; m <times; m++){
+                if([z modelSquare]>=256) break;
+                z =  [[z square] addWith:c];
+            }
+            color(m, bgr,times*1.2);
+            ptr[0]= bgr[0];
+            ptr[1] = bgr[1];
+            ptr[2] = bgr[2];
+            ptr += 4;
+        }
+    }
+}

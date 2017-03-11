@@ -114,22 +114,6 @@ void RGBToHSV(const CGFloat * bgr, CGFloat*hsv, BOOL preserveHS)
     }
 }
 
-//------------------------------------------------------------------------------
-
-static CGContextRef createBGRxImageContext(int w, int h, void* data)
-{
-	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-	
-	CGBitmapInfo kBGRxBitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
-	// BGRA is the most efficient on the iPhone.
-	
-	CGContextRef context = CGBitmapContextCreate(data, w, h, 8, w * 4, colorSpace, kBGRxBitmapInfo);
-	
-	CGColorSpaceRelease(colorSpace);
-	
-	return context;
-}
-
 void HSVFromUIColor(UIColor* color, CGFloat hsv[3])
 {
     CGColorRef colorRef = [color CGColor];

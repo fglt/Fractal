@@ -15,7 +15,7 @@
 
 - (instancetype)initWithReal:(CGFloat) real image: (CGFloat) image;
 
-- (Complex *)addWith:(Complex *)complex;
+- (Complex *)addWith:(Complex const*)complex;
 - (Complex *)mutiplyWith:(Complex *)complex;
 
 - (Complex *)square;

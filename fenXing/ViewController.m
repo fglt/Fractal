@@ -100,27 +100,11 @@
     dispatch_group_t group = dispatch_group_create();
     for(int count=0; count<threadCount; count++){
         dispatch_group_async(group, queue, ^{
-            UInt8 bgr[3] = {0};
             UInt8 *ptr= data+count*bytesPerRow*heightPerThread;
-            int max =(count+1)*heightPerThread+(_iheight%threadCount)*((count+1)/threadCount);
-            for(int i=heightPerThread*count ; i<max; i++){
-                Complex * z;
-                Complex *z0;
-                for(int j= 0; j<_iwidth; j++){
-                    int m =0;
-                    z0 = [[Complex alloc] initWithReal:(CGFloat)j*3/_iwidth-1.5 image:(CGFloat)i*3/_iheight-1.5];
-                    z = z0;
-                    for(; m <_ktimes; m++){
-                        if([z modelSquare]>=256) break;
-                        z =  [[z square] addWith:_c];
-                    }
-                    color(m, bgr,_ktimes*1.2);
-                    ptr[0]= bgr[0];
-                    ptr[1] = bgr[1];
-                    ptr[2] = bgr[2];
-                    ptr += 4;
-                }
-            }
+            int startY = heightPerThread*count;
+            int endY =(count+1)*heightPerThread+(_iheight%threadCount)*((count+1)/threadCount);
+            fractalStep(_iwidth, _iheight,startY,endY, times, _c, ptr);
+            
         });
     }
     
