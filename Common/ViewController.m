@@ -25,12 +25,7 @@
 @property (weak, nonatomic) IBOutlet ProgressIndictor *progressIndicator;
 
 @property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, strong) NSMutableArray *complexArray;
 @property (nonatomic, strong) FGLTFractal *fractal;
-@property (nonatomic) int iwidth;
-@property (nonatomic) int iheight;
-@property (nonatomic) int loops;
-
 @end
 
 @implementation ViewController
@@ -38,14 +33,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _fractal = [[FGLTFractal alloc] init];
-    _fractal.radius = 256;
+    _fractal.radius = 20;
     _fractal.width = 602;
     _fractal.height = 602;
-    _loops = 0;    
 }
 
 - (IBAction)fractalButtonAction:(id)sender {
 
+    [self configFractal];
+    
+    if([_typeSwitch check]){
+        if(!self.timer){
+            _progressIndicator.doubleValue = 0;
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
+        }
+        
+    }else{
+        [self fractals];
+    }
+
+}
+
+- (void)configFractal
+{
 #if TARGET_OS_IPHONE
     _fractal.cComplex = [[Complex alloc] initWithReal:[_crText.text doubleValue] image:[_ciText.text doubleValue]];
     _fractal.times = [_timesText.text intValue];
@@ -59,18 +69,6 @@
     _fractal.cComplex = [[Complex alloc] initWithReal:[crs doubleValue] image:[cis doubleValue]];
     _fractal.times = [timestring intValue];
 #endif
-    
-    if([_typeSwitch check]){
-        if(_loops==0){
-            self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
-            _progressIndicator.doubleValue = 0;
-            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
-        }
-        
-    }else{
-        [self fractals];
-    }
-
 }
 
 - (void)fractals
@@ -93,6 +91,7 @@
         CGImageRelease(cgimage);
     } completion:^{
         [_timer invalidate];
+        self.timer = nil;
     }];
 }
 
