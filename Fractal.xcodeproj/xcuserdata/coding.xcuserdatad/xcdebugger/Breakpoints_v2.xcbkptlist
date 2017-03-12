@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FactalMacOS/ViewController.m"
-            timestampString = "510938449.636333"
+            timestampString = "510978698.741363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-FactalButtonAction:"
             landmarkType = "7">
          </BreakpointContent>

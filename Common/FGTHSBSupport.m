@@ -9,18 +9,6 @@
 #import "FGTHSBSupport.h"
 
 //------------------------------------------------------------------------------
-
-CGFloat pin(CGFloat minValue, CGFloat value, CGFloat maxValue)
-{
-	if (minValue > value)
-		return minValue;
-	else if (maxValue < value)
-		return maxValue;
-	else
-		return value;
-}
-
-//------------------------------------------------------------------------------
 #pragma mark	Floating point conversion
 //------------------------------------------------------------------------------
 

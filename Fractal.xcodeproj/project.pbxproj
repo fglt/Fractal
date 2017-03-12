@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		174BECEB1E7430D100CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECEA1E7430D100CEEF31 /* AppDelegate.m */; };
 		174BECEE1E7430D100CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECED1E7430D100CEEF31 /* main.m */; };
-		174BECF11E7430D100CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BECF01E7430D100CEEF31 /* ViewController.m */; };
 		174BECF31E7430D100CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BECF21E7430D100CEEF31 /* Assets.xcassets */; };
 		174BECF61E7430D100CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BECF41E7430D100CEEF31 /* Main.storyboard */; };
 		174BED3B1E74569500CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED361E74569500CEEF31 /* Complex.m */; };
@@ -21,28 +19,26 @@
 		174BEDD61E7461C600CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED361E74569500CEEF31 /* Complex.m */; };
 		174BEDD71E7461C600CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED381E74569500CEEF31 /* FGTHSBSupport.m */; };
 		174BEDD81E7461C600CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED3A1E74569500CEEF31 /* fractal.m */; };
-		174BEDE51E74622F00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDDA1E74622F00CEEF31 /* AppDelegate.m */; };
 		174BEDE61E74622F00CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDB1E74622F00CEEF31 /* Assets.xcassets */; };
 		174BEDE71E74622F00CEEF31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */; };
 		174BEDE81E74622F00CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDF1E74622F00CEEF31 /* Main.storyboard */; };
 		174BEDEA1E74622F00CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE21E74622F00CEEF31 /* main.m */; };
-		174BEDEB1E74622F00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE41E74622F00CEEF31 /* ViewController.m */; };
-		174BEDEC1E74624B00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDDA1E74622F00CEEF31 /* AppDelegate.m */; };
 		174BEDED1E74624B00CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE21E74622F00CEEF31 /* main.m */; };
-		174BEDEE1E74624B00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE41E74622F00CEEF31 /* ViewController.m */; };
 		174BEDEF1E74626600CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDB1E74622F00CEEF31 /* Assets.xcassets */; };
 		174BEDF01E74626600CEEF31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */; };
 		174BEDF11E74626600CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDF1E74622F00CEEF31 /* Main.storyboard */; };
+		174BEDF91E74EB1A00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */; };
+		174BEDFC1E74EB7900CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDFB1E74EB7900CEEF31 /* ViewController.m */; };
+		174BEDFD1E74EC3E00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDFB1E74EB7900CEEF31 /* ViewController.m */; };
+		174BEDFE1E74EC3E00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */; };
+		174BEDFF1E74EDEB00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDFB1E74EB7900CEEF31 /* ViewController.m */; };
+		174BEE001E74EDEB00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		171D70051E6D9D5700C406D6 /* fenXing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = fenXing.app; path = Fractal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174BECE71E7430D100CEEF31 /* FactalMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactalMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		174BECE91E7430D100CEEF31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		174BECEA1E7430D100CEEF31 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		174BECED1E7430D100CEEF31 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		174BECEF1E7430D100CEEF31 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		174BECF01E7430D100CEEF31 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		174BECF21E7430D100CEEF31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		174BECF51E7430D100CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		174BECF71E7430D100CEEF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,15 +55,16 @@
 		174BED681E74594300CEEF31 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
 		174BED691E74594300CEEF31 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
 		174BED6A1E74594300CEEF31 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
-		174BEDD91E74622F00CEEF31 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FractalIOS/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		174BEDDA1E74622F00CEEF31 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = FractalIOS/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		174BEDDB1E74622F00CEEF31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FractalIOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		174BEDDE1E74622F00CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		174BEDE01E74622F00CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		174BEDE11E74622F00CEEF31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FractalIOS/Info.plist; sourceTree = SOURCE_ROOT; };
 		174BEDE21E74622F00CEEF31 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FractalIOS/main.m; sourceTree = SOURCE_ROOT; };
-		174BEDE31E74622F00CEEF31 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = FractalIOS/ViewController.h; sourceTree = SOURCE_ROOT; };
-		174BEDE41E74622F00CEEF31 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = FractalIOS/ViewController.m; sourceTree = SOURCE_ROOT; };
+		174BEDF61E74E6B400CEEF31 /* help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help.h; sourceTree = "<group>"; };
+		174BEDF71E74EB1A00CEEF31 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		174BEDFA1E74EB7900CEEF31 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		174BEDFB1E74EB7900CEEF31 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,14 +115,10 @@
 		171D70071E6D9D5700C406D6 /* FractalIOS */ = {
 			isa = PBXGroup;
 			children = (
-				174BEDD91E74622F00CEEF31 /* AppDelegate.h */,
-				174BEDDA1E74622F00CEEF31 /* AppDelegate.m */,
 				174BEDDB1E74622F00CEEF31 /* Assets.xcassets */,
 				174BEDDC1E74622F00CEEF31 /* Base.lproj */,
 				174BEDE11E74622F00CEEF31 /* Info.plist */,
 				174BEDE21E74622F00CEEF31 /* main.m */,
-				174BEDE31E74622F00CEEF31 /* ViewController.h */,
-				174BEDE41E74622F00CEEF31 /* ViewController.m */,
 			);
 			name = FractalIOS;
 			path = fenXing;
@@ -135,10 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				174BED641E74594300CEEF31 /* Common */,
-				174BECE91E7430D100CEEF31 /* AppDelegate.h */,
-				174BECEA1E7430D100CEEF31 /* AppDelegate.m */,
-				174BECEF1E7430D100CEEF31 /* ViewController.h */,
-				174BECF01E7430D100CEEF31 /* ViewController.m */,
 				174BECF21E7430D100CEEF31 /* Assets.xcassets */,
 				174BECF41E7430D100CEEF31 /* Main.storyboard */,
 				174BECF71E7430D100CEEF31 /* Info.plist */,
@@ -159,12 +148,17 @@
 		174BED341E74569500CEEF31 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				174BEDFA1E74EB7900CEEF31 /* ViewController.h */,
+				174BEDFB1E74EB7900CEEF31 /* ViewController.m */,
+				174BEDF71E74EB1A00CEEF31 /* AppDelegate.h */,
+				174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */,
 				174BED351E74569500CEEF31 /* Complex.h */,
 				174BED361E74569500CEEF31 /* Complex.m */,
 				174BED371E74569500CEEF31 /* FGTHSBSupport.h */,
 				174BED381E74569500CEEF31 /* FGTHSBSupport.m */,
 				174BED391E74569500CEEF31 /* fractal.h */,
 				174BED3A1E74569500CEEF31 /* fractal.m */,
+				174BEDF61E74E6B400CEEF31 /* help.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -329,9 +323,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				174BEDEB1E74622F00CEEF31 /* ViewController.m in Sources */,
+				174BEDFC1E74EB7900CEEF31 /* ViewController.m in Sources */,
 				174BEDEA1E74622F00CEEF31 /* main.m in Sources */,
-				174BEDE51E74622F00CEEF31 /* AppDelegate.m in Sources */,
+				174BEDF91E74EB1A00CEEF31 /* AppDelegate.m in Sources */,
 				174BED3B1E74569500CEEF31 /* Complex.m in Sources */,
 				174BED6D1E74594300CEEF31 /* fractal.m in Sources */,
 				174BED6C1E74594300CEEF31 /* FGTHSBSupport.m in Sources */,
@@ -342,12 +336,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174BEDFD1E74EC3E00CEEF31 /* ViewController.m in Sources */,
+				174BEDFE1E74EC3E00CEEF31 /* AppDelegate.m in Sources */,
 				174BEDD61E7461C600CEEF31 /* Complex.m in Sources */,
 				174BEDD71E7461C600CEEF31 /* FGTHSBSupport.m in Sources */,
 				174BEDD81E7461C600CEEF31 /* fractal.m in Sources */,
-				174BECF11E7430D100CEEF31 /* ViewController.m in Sources */,
 				174BECEE1E7430D100CEEF31 /* main.m in Sources */,
-				174BECEB1E7430D100CEEF31 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				174BEDEC1E74624B00CEEF31 /* AppDelegate.m in Sources */,
+				174BEDFF1E74EDEB00CEEF31 /* ViewController.m in Sources */,
+				174BEE001E74EDEB00CEEF31 /* AppDelegate.m in Sources */,
 				174BEDED1E74624B00CEEF31 /* main.m in Sources */,
-				174BEDEE1E74624B00CEEF31 /* ViewController.m in Sources */,
 				174BED811E745BD300CEEF31 /* Complex.m in Sources */,
 				174BED821E745BD300CEEF31 /* FGTHSBSupport.m in Sources */,
 				174BED831E745BD300CEEF31 /* fractal.m in Sources */,

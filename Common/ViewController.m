@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  FactalMacOS
+//  fenXing
 //
-//  Created by Coding on 11/03/2017.
+//  Created by Coding on 06/03/2017.
 //  Copyright © 2017 Coding. All rights reserved.
 //
 
@@ -11,59 +11,69 @@
 #import "FGTHSBSupport.h"
 #import "fractal.h"
 
-@interface ViewController()
-@property (weak) IBOutlet NSImageView *imgView;
+@interface ViewController ()
 
-@property (weak) IBOutlet NSTextField *crText;
-@property (weak) IBOutlet NSTextField *ciText;
-@property (weak) IBOutlet NSTextField *timesText;
-@property (weak) IBOutlet NSTextField *timeText;
-@property (weak) IBOutlet NSButton *checkButton;
-@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (weak, nonatomic) IBOutlet NameView(ImageView) *imgView;
+@property (weak, nonatomic) IBOutlet NameView(TextField) *crText;
+@property (weak, nonatomic) IBOutlet NameView(TextField) *ciText;
+@property (weak, nonatomic) IBOutlet NameView(TextField) *timesText;
+@property (weak, nonatomic) IBOutlet CheckButton *typeSwitch;
+@property (weak, nonatomic) IBOutlet ProgressView *progressIndicator;
 
-@property (strong) NSTimer *timers;
-@property (strong) NSMutableArray *complexArray;
-@property  int iwidth;
-@property  int iheight;
-@property  int loops;
-@property (strong) Complex *c;
-@property  int ktimes;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSMutableArray *complexArray;
+@property (nonatomic) int iwidth;
+@property (nonatomic) int iheight;
+@property (nonatomic) int loops;
+@property (nonatomic, strong) Complex *c;
+@property (nonatomic) int ktimes;
+
 @end
 
-@implementation ViewController{
+@implementation ViewController
+{
     void *imgData;
     UInt16 *kdata;
     CGContextRef context;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _imgView.imageAlignment = NSImageAlignCenter;
     _iwidth = 602;
     _iheight = 602;
     _loops = 0;
     NSLog(@"cpu numbers: %d",countOfCores());
-    // Do any additional setup after loading the view.
+    
 }
 
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
-}
-
-- (IBAction)FactalButtonAction:(NSButton *)sender {
+- (IBAction)fractalButtonAction:(id)sender {
+#if TARGET_OS_IPHONE
+    _c = [[Complex alloc] initWithReal:[_crText.text doubleValue] image:[_ciText.text doubleValue]];
+    _ktimes = [_timesText.text intValue];
+    
+    if(_typeSwitch.isOn){
+        
+        [self fractal:_ktimes];
+        
+    }else{
+        
+        if(_loops==0){
+            self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
+            //self.timesArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
+            _progressIndicator.progress = 0;
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
+        }
+    }
+#else
     NSString *crs,*cis, *timestring;
-
+    
     crs = [_crText.stringValue isEqual:@""] ? _crText.placeholderString:_crText.stringValue;
     cis = [_ciText.stringValue isEqual:@""] ? _ciText.placeholderString:_ciText.stringValue;
     timestring = [_timesText.stringValue isEqual:@""] ? _timesText.placeholderString:_timesText.stringValue;
-   
+    
     _c = [[Complex alloc] initWithReal:[crs doubleValue] image:[cis doubleValue]];
     _ktimes = [timestring intValue];
     
-    if(_checkButton.state){
+    if(_typeSwitch.state){
         if(imgData) return;
         [self fractal:_ktimes];
         
@@ -71,14 +81,13 @@
         
         if(_loops==0){
             self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
-
+            
             _progressIndicator.doubleValue = 0;
-            self.timers = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(run2) userInfo:nil repeats:YES];
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
         }
     }
-
+#endif
 }
-
 
 - (void)imgContextWithWidth:(int) width height:(int) height{
     if(!imgData)
@@ -94,9 +103,6 @@
 
 - (void)fractal:(int) times
 {
-    NSDate *start;
-    start = [NSDate date];
-    
     [self imgContextWithWidth:_iwidth height:_iheight];
     
     int bytesPerRow = 4*_iwidth;
@@ -116,29 +122,30 @@
     }
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        
         CGImageRef cgimage = CGBitmapContextCreateImage(context);
-        
-        NSImage* image = [self imageFromCGImageRef:cgimage];
+        IMAGE_CLASS *image = [self imageFromCGImageRef:cgimage];
         
         free(imgData);
         imgData = nil;
         CGContextRelease(context);
         CGImageRelease(cgimage);
         _imgView.image = image;
-        double de = [[NSDate date] timeIntervalSinceDate:start];
-        
-        _timeText.stringValue = [NSString stringWithFormat:@"%.2f",de];
     });
 }
 
-- (void)run2
+- (void)fractalGradient
 {
-    _progressIndicator.doubleValue= (CGFloat)_loops*100.0/_ktimes;
+    
+#if TARGET_OS_IPHONE
+    _progressIndicator.progress = (CGFloat)_loops/_ktimes;
+#else
+    _progressIndicator.doubleValue = (CGFloat)_loops*100/_ktimes;
+#endif
     if(_loops>=_ktimes) {
-        [_timers invalidate];
+        [_timer invalidate];
         free(imgData);
         imgData = nil;
+        CGContextRelease(context);
         free(kdata);
         kdata = nil;
         [self.complexArray removeAllObjects];
@@ -179,23 +186,23 @@
     }
     
     CGImageRef cgimage = CGBitmapContextCreateImage(context);
-    NSImage* image = [self imageFromCGImageRef:cgimage];
+    IMAGE_CLASS *image = [self imageFromCGImageRef:cgimage];
     _imgView.image = image;
     CGImageRelease(cgimage);
     _loops++;
 }
 
-
-- (NSImage*) imageFromCGImageRef:(CGImageRef)image
+- (IMAGE_CLASS *)imageFromCGImageRef:(CGImageRef)image
 
 {
-    
+    IMAGE_CLASS *newImage;
+#if TARGET_OS_IPHONE
+    newImage = [UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+#else
+
     NSRect imageRect = NSMakeRect(0.0, 0.0, 0.0, 0.0);
     
     CGContextRef imageContext = nil;
-    
-    NSImage* newImage = nil;
-    
     
     
     // Get the image dimensions.
@@ -222,9 +229,8 @@
     CGContextDrawImage(imageContext, *(CGRect*)&imageRect, image);
     
     [newImage unlockFocus];
-    
+#endif
     return newImage;
-    
 }
 
 @end

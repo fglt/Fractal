@@ -696,10 +696,10 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="8vv-mo-5pZ"/>
                             </imageView>
                             <stackView distribution="fillProportionally" orientation="vertical" alignment="centerX" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0x9-wK-HSp">
-                                <rect key="frame" x="336" y="113" width="250" height="174"/>
+                                <rect key="frame" x="336" y="130" width="250" height="140"/>
                                 <subviews>
                                     <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v6D-lx-CWo" userLabel="complex">
-                                        <rect key="frame" x="0.0" y="152" width="250" height="22"/>
+                                        <rect key="frame" x="0.0" y="118" width="250" height="22"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-5w-AST">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="22"/>
@@ -738,8 +738,8 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4r-bo-ymy">
-                                        <rect key="frame" x="0.0" y="110" width="250" height="22"/>
+                                    <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="70" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4r-bo-ymy">
+                                        <rect key="frame" x="0.0" y="76" width="250" height="22"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1N-VC-98l">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="22"/>
@@ -752,18 +752,15 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPF-IE-sVY">
-                                                <rect key="frame" x="150" y="0.0" width="100" height="22"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="DF0-yI-Xfe">
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="K05-ed-s7s">
+                                                <rect key="frame" x="168" y="2" width="84" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wdt-fr-Xen">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
-                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
+                                                </buttonCell>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="FPF-IE-sVY" firstAttribute="width" secondItem="v1N-VC-98l" secondAttribute="width" id="GWp-eR-6l0"/>
-                                            <constraint firstItem="FPF-IE-sVY" firstAttribute="height" secondItem="v1N-VC-98l" secondAttribute="height" id="NC1-yE-Fd6"/>
                                             <constraint firstAttribute="width" constant="250" id="mhk-hh-J6S"/>
                                         </constraints>
                                         <visibilityPriorities>
@@ -775,13 +772,6 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="K05-ed-s7s">
-                                        <rect key="frame" x="94.5" y="74" width="61" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wdt-fr-Xen">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-f9-iQe">
                                         <rect key="frame" x="98.5" y="37" width="53" height="19"/>
                                         <buttonCell key="cell" type="roundRect" title="Factal" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K9G-5A-mQB">
@@ -789,11 +779,11 @@
                                             <font key="font" metaFont="system" size="14"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="FactalButtonAction:" target="XfG-lQ-9wD" id="QgB-EX-ZHh"/>
+                                            <action selector="fractalButtonAction:" target="XfG-lQ-9wD" id="4AL-zo-YHO"/>
                                         </connections>
                                     </button>
                                     <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ce9-xQ-g5A">
-                                        <rect key="frame" x="75" y="-1" width="100" height="20"/>
+                                        <rect key="frame" x="0.0" y="-1" width="250" height="20"/>
                                     </progressIndicator>
                                 </subviews>
                                 <constraints>
@@ -804,10 +794,8 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
-                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -828,7 +816,6 @@
                         <outlet property="crText" destination="dfS-5w-AST" id="4Fp-Uh-Pq0"/>
                         <outlet property="imgView" destination="M6Q-Qd-9N1" id="zIb-2t-plu"/>
                         <outlet property="progressIndicator" destination="ce9-xQ-g5A" id="etB-Qj-n2c"/>
-                        <outlet property="timeText" destination="FPF-IE-sVY" id="Aed-4m-0Bf"/>
                         <outlet property="timesText" destination="v1N-VC-98l" id="rrw-yv-bSu"/>
                     </connections>
                 </viewController>

@@ -11,10 +11,6 @@
 
 //------------------------------------------------------------------------------
 
-CGFloat pin(CGFloat minValue, CGFloat value, CGFloat maxValue);
-
-//------------------------------------------------------------------------------
-
 	// These functions convert between an RGB value with components in the
 	// 0.0f..1.0f range to HSV where Hue, Saturation and
 	// Value (aka Brightness) are percentages expressed as 0.0f..1.0f.

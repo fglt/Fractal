@@ -13,25 +13,22 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgView;
-@property (weak, nonatomic) IBOutlet UITextField *crText;
-@property (weak, nonatomic) IBOutlet UITextField *ciText;
-@property (weak, nonatomic) IBOutlet UITextField *timeText;
-//@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UITextField *timesText;
-@property (weak, nonatomic) IBOutlet UISwitch *typeSwitch;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressIndicator;
+@property (weak, nonatomic) IBOutlet NameView(ImageView) *imgView;
+@property (weak, nonatomic) IBOutlet NameView(TextField) *crText;
+@property (weak, nonatomic) IBOutlet NameView(TextField) *ciText;
+@property (weak, nonatomic) IBOutlet NameView(TextField) *timeText;
+@property (weak, nonatomic) IBOutlet NameView(TextField) *timesText;
+@property (weak, nonatomic) IBOutlet CheckButton *typeSwitch;
+@property (weak, nonatomic) IBOutlet ProgressView *progressIndicator;
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSMutableArray *complexArray;
-//@property (nonatomic, strong) NSMutableArray *timesArray;
 @property (nonatomic) int iwidth;
 @property (nonatomic) int iheight;
 @property (nonatomic) int loops;
 @property (nonatomic, strong) Complex *c;
 @property (nonatomic) int ktimes;
 
-//@property (nonatomic) int scale;
 @end
 
 @implementation ViewController
@@ -55,7 +52,8 @@
     // Dispose of any resources that can be recreated.
     
 }
-- (IBAction)runF:(id)sender {
+- (IBAction)fractalButtonAction:(id)sender {
+#if TARGET_OS_IPHONE
     _c = [[Complex alloc] initWithReal:[_crText.text doubleValue] image:[_ciText.text doubleValue]];
     _ktimes = [_timesText.text intValue];
     
@@ -69,9 +67,33 @@
             self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
             //self.timesArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
             _progressIndicator.progress = 0;
-            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(run2) userInfo:nil repeats:YES];
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
         }
     }
+#else
+    NSString *crs,*cis, *timestring;
+    
+    crs = [_crText.stringValue isEqual:@""] ? _crText.placeholderString:_crText.stringValue;
+    cis = [_ciText.stringValue isEqual:@""] ? _ciText.placeholderString:_ciText.stringValue;
+    timestring = [_timesText.stringValue isEqual:@""] ? _timesText.placeholderString:_timesText.stringValue;
+    
+    _c = [[Complex alloc] initWithReal:[crs doubleValue] image:[cis doubleValue]];
+    _ktimes = [timestring intValue];
+    
+    if(_checkButton.state){
+        if(imgData) return;
+        [self fractal:_ktimes];
+        
+    }else{
+        
+        if(_loops==0){
+            self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
+            
+            _progressIndicator.doubleValue = 0;
+            self.timers = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
+        }
+    }
+#endif
 }
 
 - (void)imgContextWithWidth:(int) width height:(int) height{
@@ -124,19 +146,22 @@
     });
 }
 
-- (void)run2
+- (void)fractalGradient
 {
+#if TARGET_OS_IPHONE
     _progressIndicator.progress = (CGFloat)_loops/_ktimes;
+#else
+    _progressIndicator.progress = (CGFloat)_loops*100/_ktimes;
+#endif
     if(_loops>=_ktimes) {
         [_timer invalidate];
         free(imgData);
         imgData = nil;
+        CGContextRelease(context);
         free(kdata);
         kdata = nil;
         [self.complexArray removeAllObjects];
-        //[self.timesArray removeAllObjects];
         self.complexArray = nil;
-        //self.timesArray = nil;
         _loops = 0;
         return;
     }
@@ -173,10 +198,51 @@
     }
     
     CGImageRef cgimage = CGBitmapContextCreateImage(context);
-    UIImage* image = [UIImage imageWithCGImage:cgimage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+    UIImage *image = [self imageFromCGImageRef:cgimage];
     _imgView.image = image;
     CGImageRelease(cgimage);
     _loops++;
+}
+
+- (IMAGE_CLASS *)imageFromCGImageRef:(CGImageRef)image
+
+{
+    IMAGE_CLASS *newImage;
+#if TARGET_OS_IPHONE
+    newImage = [UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+#else
+
+    NSRect imageRect = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+    
+    CGContextRef imageContext = nil;
+    
+    
+    // Get the image dimensions.
+    
+    imageRect.size.height = CGImageGetHeight(image);
+    
+    imageRect.size.width = CGImageGetWidth(image);
+    
+    
+    
+    // Create a new image to receive the Quartz image data.
+    
+    newImage = [[NSImage alloc] initWithSize:imageRect.size];
+    
+    [newImage lockFocus];
+    
+    
+    // Get the Quartz context and draw.
+    
+    imageContext = (CGContextRef)[[NSGraphicsContext currentContext]
+                                  
+                                  graphicsPort];
+    
+    CGContextDrawImage(imageContext, *(CGRect*)&imageRect, image);
+    
+    [newImage unlockFocus];
+#endif
+    return newImage;
 }
 
 @end
