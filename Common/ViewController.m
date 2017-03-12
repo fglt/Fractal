@@ -56,7 +56,6 @@
 {
     NSString *crs,*cis, *timestring;
     
-    
 #if TARGET_OS_IPHONE
     crs = _crText.text;
     cis = _ciText.text;
