@@ -9,7 +9,7 @@
 @import Foundation;
 @import CoreGraphics;
 
-@interface Complex : NSObject
+@interface Complex : NSObject<NSCopying>
 
 @property (nonatomic) CGFloat real;
 @property (nonatomic) CGFloat image;

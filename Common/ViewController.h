@@ -7,7 +7,7 @@
 //
 @import Foundation;
 
-#import "help.h"
+#import "crossHelp.h"
 
 
 @interface ViewController : RootView

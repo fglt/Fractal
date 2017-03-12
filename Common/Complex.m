@@ -49,4 +49,12 @@
 {
     return self.real*self.real + self.image*self.image;
 }
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    Complex *c= [[Complex alloc] init];
+    c.real = _real;
+    c.image = _image;
+    return c;
+}
 @end

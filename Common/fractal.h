@@ -16,4 +16,3 @@ void color(CGFloat value, UInt8 *bgr,CGFloat maxValue);
 
 unsigned int countOfCores();
 
-void fractalStep(int width, int height,int startY, int endY, int times, Complex *const c, UInt8 *ptr);
