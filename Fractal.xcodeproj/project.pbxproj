@@ -28,11 +28,16 @@
 		174BEDF01E74626600CEEF31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */; };
 		174BEDF11E74626600CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDF1E74622F00CEEF31 /* Main.storyboard */; };
 		174BEDF91E74EB1A00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */; };
-		174BEDFC1E74EB7900CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDFB1E74EB7900CEEF31 /* ViewController.m */; };
 		174BEDFD1E74EC3E00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDFB1E74EB7900CEEF31 /* ViewController.m */; };
 		174BEDFE1E74EC3E00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */; };
 		174BEDFF1E74EDEB00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDFB1E74EB7900CEEF31 /* ViewController.m */; };
 		174BEE001E74EDEB00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */; };
+		174BEE091E7517CE00CEEF31 /* FGSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE081E7517CE00CEEF31 /* FGSwitch.m */; };
+		174BEE0A1E751A4E00CEEF31 /* FGSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE081E7517CE00CEEF31 /* FGSwitch.m */; };
+		174BEE0B1E751A5600CEEF31 /* FGSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE081E7517CE00CEEF31 /* FGSwitch.m */; };
+		174BEE121E751AAE00CEEF31 /* ProgressIndictor.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */; };
+		174BEE131E751AAE00CEEF31 /* ProgressIndictor.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */; };
+		174BEE141E751AAE00CEEF31 /* ProgressIndictor.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +70,10 @@
 		174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		174BEDFA1E74EB7900CEEF31 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		174BEDFB1E74EB7900CEEF31 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		174BEE071E7517CE00CEEF31 /* FGSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGSwitch.h; sourceTree = "<group>"; };
+		174BEE081E7517CE00CEEF31 /* FGSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGSwitch.m; sourceTree = "<group>"; };
+		174BEE101E751AAE00CEEF31 /* ProgressIndictor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressIndictor.h; sourceTree = "<group>"; };
+		174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressIndictor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +168,10 @@
 				174BED391E74569500CEEF31 /* fractal.h */,
 				174BED3A1E74569500CEEF31 /* fractal.m */,
 				174BEDF61E74E6B400CEEF31 /* help.h */,
+				174BEE071E7517CE00CEEF31 /* FGSwitch.h */,
+				174BEE081E7517CE00CEEF31 /* FGSwitch.m */,
+				174BEE101E751AAE00CEEF31 /* ProgressIndictor.h */,
+				174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -323,7 +336,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				174BEDFC1E74EB7900CEEF31 /* ViewController.m in Sources */,
+				174BEE091E7517CE00CEEF31 /* FGSwitch.m in Sources */,
+				174BEE121E751AAE00CEEF31 /* ProgressIndictor.m in Sources */,
 				174BEDEA1E74622F00CEEF31 /* main.m in Sources */,
 				174BEDF91E74EB1A00CEEF31 /* AppDelegate.m in Sources */,
 				174BED3B1E74569500CEEF31 /* Complex.m in Sources */,
@@ -336,11 +350,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174BEE0B1E751A5600CEEF31 /* FGSwitch.m in Sources */,
 				174BEDFD1E74EC3E00CEEF31 /* ViewController.m in Sources */,
 				174BEDFE1E74EC3E00CEEF31 /* AppDelegate.m in Sources */,
 				174BEDD61E7461C600CEEF31 /* Complex.m in Sources */,
 				174BEDD71E7461C600CEEF31 /* FGTHSBSupport.m in Sources */,
 				174BEDD81E7461C600CEEF31 /* fractal.m in Sources */,
+				174BEE131E751AAE00CEEF31 /* ProgressIndictor.m in Sources */,
 				174BECEE1E7430D100CEEF31 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,11 +365,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174BEE0A1E751A4E00CEEF31 /* FGSwitch.m in Sources */,
 				174BEDFF1E74EDEB00CEEF31 /* ViewController.m in Sources */,
 				174BEE001E74EDEB00CEEF31 /* AppDelegate.m in Sources */,
 				174BEDED1E74624B00CEEF31 /* main.m in Sources */,
 				174BED811E745BD300CEEF31 /* Complex.m in Sources */,
 				174BED821E745BD300CEEF31 /* FGTHSBSupport.m in Sources */,
+				174BEE141E751AAE00CEEF31 /* ProgressIndictor.m in Sources */,
 				174BED831E745BD300CEEF31 /* fractal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

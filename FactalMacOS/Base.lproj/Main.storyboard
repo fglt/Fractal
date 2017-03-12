@@ -752,9 +752,9 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="K05-ed-s7s">
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="K05-ed-s7s" customClass="FGSwitch">
                                                 <rect key="frame" x="168" y="2" width="84" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wdt-fr-Xen">
+                                                <buttonCell key="cell" type="check" title="Gradient" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wdt-fr-Xen">
                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -782,7 +782,7 @@
                                             <action selector="fractalButtonAction:" target="XfG-lQ-9wD" id="4AL-zo-YHO"/>
                                         </connections>
                                     </button>
-                                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ce9-xQ-g5A">
+                                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ce9-xQ-g5A" customClass="ProgressIndictor">
                                         <rect key="frame" x="0.0" y="-1" width="250" height="20"/>
                                     </progressIndicator>
                                 </subviews>
@@ -811,12 +811,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="checkButton" destination="K05-ed-s7s" id="HEc-d4-tXg"/>
                         <outlet property="ciText" destination="2SX-er-6jd" id="uwy-In-pUM"/>
                         <outlet property="crText" destination="dfS-5w-AST" id="4Fp-Uh-Pq0"/>
                         <outlet property="imgView" destination="M6Q-Qd-9N1" id="zIb-2t-plu"/>
                         <outlet property="progressIndicator" destination="ce9-xQ-g5A" id="etB-Qj-n2c"/>
                         <outlet property="timesText" destination="v1N-VC-98l" id="rrw-yv-bSu"/>
+                        <outlet property="typeSwitch" destination="K05-ed-s7s" id="8Ld-d1-62Q"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

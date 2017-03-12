@@ -10,6 +10,8 @@
 #import "Complex.h"
 #import "FGTHSBSupport.h"
 #import "fractal.h"
+#import "FGSwitch.h"
+#import "ProgressIndictor.h"
 
 @interface ViewController ()
 
@@ -17,8 +19,9 @@
 @property (weak, nonatomic) IBOutlet NameView(TextField) *crText;
 @property (weak, nonatomic) IBOutlet NameView(TextField) *ciText;
 @property (weak, nonatomic) IBOutlet NameView(TextField) *timesText;
-@property (weak, nonatomic) IBOutlet CheckButton *typeSwitch;
-@property (weak, nonatomic) IBOutlet ProgressView *progressIndicator;
+@property (weak) IBOutlet FGSwitch *typeSwitch;
+
+@property (weak, nonatomic) IBOutlet ProgressIndictor *progressIndicator;
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSMutableArray *complexArray;
@@ -49,20 +52,6 @@
 #if TARGET_OS_IPHONE
     _c = [[Complex alloc] initWithReal:[_crText.text doubleValue] image:[_ciText.text doubleValue]];
     _ktimes = [_timesText.text intValue];
-    
-    if(_typeSwitch.isOn){
-        
-        [self fractal:_ktimes];
-        
-    }else{
-        
-        if(_loops==0){
-            self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
-            //self.timesArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
-            _progressIndicator.progress = 0;
-            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
-        }
-    }
 #else
     NSString *crs,*cis, *timestring;
     
@@ -72,21 +61,19 @@
     
     _c = [[Complex alloc] initWithReal:[crs doubleValue] image:[cis doubleValue]];
     _ktimes = [timestring intValue];
+#endif
     
-    if(_typeSwitch.state){
-        if(imgData) return;
-        [self fractal:_ktimes];
-        
-    }else{
-        
+    if([_typeSwitch check]){
         if(_loops==0){
             self.complexArray= [NSMutableArray arrayWithCapacity:_iwidth*_iheight];
-            
             _progressIndicator.doubleValue = 0;
-            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(fractalGradient) userInfo:nil repeats:YES];
         }
+        
+    }else{
+        [self fractal:_ktimes];
     }
-#endif
+
 }
 
 - (void)imgContextWithWidth:(int) width height:(int) height{
@@ -135,12 +122,8 @@
 
 - (void)fractalGradient
 {
-    
-#if TARGET_OS_IPHONE
-    _progressIndicator.progress = (CGFloat)_loops/_ktimes;
-#else
-    _progressIndicator.doubleValue = (CGFloat)_loops*100/_ktimes;
-#endif
+    _progressIndicator.doubleValue = (CGFloat)_loops/_ktimes;
+
     if(_loops>=_ktimes) {
         [_timer invalidate];
         free(imgData);
@@ -232,5 +215,7 @@
 #endif
     return newImage;
 }
+
+
 
 @end

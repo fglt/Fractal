@@ -99,7 +99,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="cd7-Zl-PSe"/>
                                                 </constraints>
                                             </view>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-g5-1cb">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-g5-1cb" customClass="FGSwitch">
                                                 <rect key="frame" x="190" y="0.0" width="77" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="75" id="Jh1-db-dkZ"/>
@@ -121,7 +121,7 @@
                                             <action selector="fractalButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="noQ-wg-T1I"/>
                                         </connections>
                                     </button>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p1y-SS-isy">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p1y-SS-isy" customClass="ProgressIndictor">
                                         <rect key="frame" x="57.5" y="115.5" width="150" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="9hJ-ak-pdq"/>
