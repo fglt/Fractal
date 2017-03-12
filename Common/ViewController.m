@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "Complex.h"
 #import "FGTHSBSupport.h"
-#import "fractal.h"
 #import "FGSwitch.h"
 #import "ProgressIndictor.h"
 #import "FGLTFractal.h"
@@ -39,7 +37,7 @@
 }
 
 - (IBAction)fractalButtonAction:(id)sender {
-
+    
     [self configFractal];
     
     if([_typeSwitch check]){
@@ -51,41 +49,43 @@
     }else{
         [self fractals];
     }
-
+    
 }
 
 - (void)configFractal
 {
-#if TARGET_OS_IPHONE
-    _fractal.cComplex = [[Complex alloc] initWithReal:[_crText.text doubleValue] image:[_ciText.text doubleValue]];
-    _fractal.times = [_timesText.text intValue];
-#else
     NSString *crs,*cis, *timestring;
     
+    
+#if TARGET_OS_IPHONE
+    crs = _crText.text;
+    cis = _ciText.text;
+    timestring = _timesText.text;
+#else
     crs = [_crText.stringValue isEqual:@""] ? _crText.placeholderString:_crText.stringValue;
     cis = [_ciText.stringValue isEqual:@""] ? _ciText.placeholderString:_ciText.stringValue;
     timestring = [_timesText.stringValue isEqual:@""] ? _timesText.placeholderString:_timesText.stringValue;
     
-    _fractal.cComplex = [[Complex alloc] initWithReal:[crs doubleValue] image:[cis doubleValue]];
-    _fractal.times = [timestring intValue];
 #endif
+    [_fractal configComplexWithReal:[crs doubleValue] image:[cis doubleValue]];
+    _fractal.times = [timestring intValue];
 }
 
 - (void)fractals
 {
     [_fractal fractalsWithCompletion:^{
-        CGImageRef cgimage = CGBitmapContextCreateImage([_fractal context]);
+        CGImageRef cgimage = [_fractal newCGImage];
         IMAGE_CLASS *image = [self imageFromCGImageRef:cgimage];
         CGImageRelease(cgimage);
         _imgView.image = image;
     }];
- }
+}
 
 - (void)fractalGradient
 {
     [_fractal fractalGradientWithStepHandler:^{
         _progressIndicator.doubleValue = _fractal.progress;
-        CGImageRef cgimage = CGBitmapContextCreateImage([_fractal context]);
+        CGImageRef cgimage = [_fractal newCGImage];
         IMAGE_CLASS *image = [self imageFromCGImageRef:cgimage];
         _imgView.image = image;
         CGImageRelease(cgimage);
@@ -102,7 +102,7 @@
 #if TARGET_OS_IPHONE
     newImage = [UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
 #else
-
+    
     NSRect imageRect = NSMakeRect(0.0, 0.0, 0.0, 0.0);
     
     CGContextRef imageContext = nil;

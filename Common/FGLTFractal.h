@@ -29,6 +29,7 @@
 - (void)fractalsWithCompletion:(void (^)())completion;
 - (void)fractalGradientWithStepHandler:(void (^)())handler completion:(void (^)())completion;
 
-- (CGContextRef)context;
+- (CGImageRef)newCGImage;
 - (CGFloat)progress;
+- (void)configComplexWithReal:(CGFloat)real image:(CGFloat)image;
 @end

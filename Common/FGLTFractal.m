@@ -7,7 +7,6 @@
 //
 
 #import "FGLTFractal.h"
-#import "fractal.h"
 #import "FGTHSBSupport.h"
 #import <mach-o/arch.h>
 #import <sys/sysctl.h>
@@ -75,6 +74,7 @@
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         if(completion)
             completion();
+        CGContextRelease(context);
     });
 }
 
@@ -142,14 +142,20 @@
     CGColorSpaceRelease(colorSpace);
 }
 
-- (CGContextRef)context
+- (CGImageRef)newCGImage
 {
-    return  context;
+    CGImageRef cgimage = CGBitmapContextCreateImage(context);
+    return cgimage;
 }
 
 - (CGFloat)progress
 {
     return (CGFloat)_loops/_times;
+}
+
+- (void)configComplexWithReal:(CGFloat)real image:(CGFloat)image
+{
+    _cComplex = [[Complex alloc] initWithReal:real image:image];
 }
 
 #pragma mark - private
@@ -193,7 +199,7 @@
 
 - (UInt32)countOfCores
 {
-   UInt32 ncpu;
+    UInt32 ncpu;
     size_t len = sizeof(ncpu);
     sysctlbyname("hw.ncpu", &ncpu, &len, NULL, 0);
     
