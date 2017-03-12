@@ -11,8 +11,6 @@
 		174BECF31E7430D100CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BECF21E7430D100CEEF31 /* Assets.xcassets */; };
 		174BECF61E7430D100CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BECF41E7430D100CEEF31 /* Main.storyboard */; };
 		174BED3B1E74569500CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED361E74569500CEEF31 /* Complex.m */; };
-		174BED6C1E74594300CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED681E74594300CEEF31 /* FGTHSBSupport.m */; };
-		174BED6D1E74594300CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED6A1E74594300CEEF31 /* fractal.m */; };
 		174BED811E745BD300CEEF31 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED361E74569500CEEF31 /* Complex.m */; };
 		174BED821E745BD300CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED381E74569500CEEF31 /* FGTHSBSupport.m */; };
 		174BED831E745BD300CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED3A1E74569500CEEF31 /* fractal.m */; };
@@ -20,13 +18,9 @@
 		174BEDD71E7461C600CEEF31 /* FGTHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED381E74569500CEEF31 /* FGTHSBSupport.m */; };
 		174BEDD81E7461C600CEEF31 /* fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BED3A1E74569500CEEF31 /* fractal.m */; };
 		174BEDE61E74622F00CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDB1E74622F00CEEF31 /* Assets.xcassets */; };
-		174BEDE71E74622F00CEEF31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */; };
-		174BEDE81E74622F00CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDF1E74622F00CEEF31 /* Main.storyboard */; };
 		174BEDEA1E74622F00CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE21E74622F00CEEF31 /* main.m */; };
 		174BEDED1E74624B00CEEF31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDE21E74622F00CEEF31 /* main.m */; };
 		174BEDEF1E74626600CEEF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDB1E74622F00CEEF31 /* Assets.xcassets */; };
-		174BEDF01E74626600CEEF31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */; };
-		174BEDF11E74626600CEEF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BEDDF1E74622F00CEEF31 /* Main.storyboard */; };
 		174BEDF91E74EB1A00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */; };
 		174BEDFD1E74EC3E00CEEF31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDFB1E74EB7900CEEF31 /* ViewController.m */; };
 		174BEDFE1E74EC3E00CEEF31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEDF81E74EB1A00CEEF31 /* AppDelegate.m */; };
@@ -38,6 +32,10 @@
 		174BEE121E751AAE00CEEF31 /* ProgressIndictor.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */; };
 		174BEE131E751AAE00CEEF31 /* ProgressIndictor.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */; };
 		174BEE141E751AAE00CEEF31 /* ProgressIndictor.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */; };
+		17B0E3301E75265E005F3260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B0E32C1E75265E005F3260 /* LaunchScreen.storyboard */; };
+		17B0E3311E75265E005F3260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B0E32E1E75265E005F3260 /* Main.storyboard */; };
+		17B0E3321E752687005F3260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B0E32E1E75265E005F3260 /* Main.storyboard */; };
+		17B0E3331E752698005F3260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B0E32C1E75265E005F3260 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,15 +52,7 @@
 		174BED381E74569500CEEF31 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
 		174BED391E74569500CEEF31 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
 		174BED3A1E74569500CEEF31 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
-		174BED651E74594300CEEF31 /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
-		174BED661E74594300CEEF31 /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
-		174BED671E74594300CEEF31 /* FGTHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTHSBSupport.h; sourceTree = "<group>"; };
-		174BED681E74594300CEEF31 /* FGTHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTHSBSupport.m; sourceTree = "<group>"; };
-		174BED691E74594300CEEF31 /* fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fractal.h; sourceTree = "<group>"; };
-		174BED6A1E74594300CEEF31 /* fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fractal.m; sourceTree = "<group>"; };
 		174BEDDB1E74622F00CEEF31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FractalIOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		174BEDDE1E74622F00CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		174BEDE01E74622F00CEEF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		174BEDE11E74622F00CEEF31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FractalIOS/Info.plist; sourceTree = SOURCE_ROOT; };
 		174BEDE21E74622F00CEEF31 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FractalIOS/main.m; sourceTree = SOURCE_ROOT; };
 		174BEDF61E74E6B400CEEF31 /* help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = help.h; sourceTree = "<group>"; };
@@ -74,6 +64,8 @@
 		174BEE081E7517CE00CEEF31 /* FGSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGSwitch.m; sourceTree = "<group>"; };
 		174BEE101E751AAE00CEEF31 /* ProgressIndictor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressIndictor.h; sourceTree = "<group>"; };
 		174BEE111E751AAE00CEEF31 /* ProgressIndictor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressIndictor.m; sourceTree = "<group>"; };
+		17B0E32D1E75265E005F3260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FractalIOS/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		17B0E32F1E75265E005F3260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FractalIOS/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +116,9 @@
 		171D70071E6D9D5700C406D6 /* FractalIOS */ = {
 			isa = PBXGroup;
 			children = (
+				17B0E32C1E75265E005F3260 /* LaunchScreen.storyboard */,
+				17B0E32E1E75265E005F3260 /* Main.storyboard */,
 				174BEDDB1E74622F00CEEF31 /* Assets.xcassets */,
-				174BEDDC1E74622F00CEEF31 /* Base.lproj */,
 				174BEDE11E74622F00CEEF31 /* Info.plist */,
 				174BEDE21E74622F00CEEF31 /* main.m */,
 			);
@@ -136,7 +129,6 @@
 		174BECE81E7430D100CEEF31 /* FractalMacOS */ = {
 			isa = PBXGroup;
 			children = (
-				174BED641E74594300CEEF31 /* Common */,
 				174BECF21E7430D100CEEF31 /* Assets.xcassets */,
 				174BECF41E7430D100CEEF31 /* Main.storyboard */,
 				174BECF71E7430D100CEEF31 /* Info.plist */,
@@ -175,29 +167,6 @@
 			);
 			path = Common;
 			sourceTree = "<group>";
-		};
-		174BED641E74594300CEEF31 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				174BED651E74594300CEEF31 /* Complex.h */,
-				174BED661E74594300CEEF31 /* Complex.m */,
-				174BED671E74594300CEEF31 /* FGTHSBSupport.h */,
-				174BED681E74594300CEEF31 /* FGTHSBSupport.m */,
-				174BED691E74594300CEEF31 /* fractal.h */,
-				174BED6A1E74594300CEEF31 /* fractal.m */,
-			);
-			path = Common;
-			sourceTree = SOURCE_ROOT;
-		};
-		174BEDDC1E74622F00CEEF31 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				174BEDDF1E74622F00CEEF31 /* Main.storyboard */,
-				174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */,
-			);
-			name = Base.lproj;
-			path = FractalIOS/Base.lproj;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -304,9 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				174BEDE81E74622F00CEEF31 /* Main.storyboard in Resources */,
+				17B0E3311E75265E005F3260 /* Main.storyboard in Resources */,
 				174BEDE61E74622F00CEEF31 /* Assets.xcassets in Resources */,
-				174BEDE71E74622F00CEEF31 /* LaunchScreen.storyboard in Resources */,
+				17B0E3301E75265E005F3260 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,9 +292,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B0E3331E752698005F3260 /* LaunchScreen.storyboard in Resources */,
+				17B0E3321E752687005F3260 /* Main.storyboard in Resources */,
 				174BEDEF1E74626600CEEF31 /* Assets.xcassets in Resources */,
-				174BEDF01E74626600CEEF31 /* LaunchScreen.storyboard in Resources */,
-				174BEDF11E74626600CEEF31 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,8 +310,6 @@
 				174BEDEA1E74622F00CEEF31 /* main.m in Sources */,
 				174BEDF91E74EB1A00CEEF31 /* AppDelegate.m in Sources */,
 				174BED3B1E74569500CEEF31 /* Complex.m in Sources */,
-				174BED6D1E74594300CEEF31 /* fractal.m in Sources */,
-				174BED6C1E74594300CEEF31 /* FGTHSBSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,18 +354,18 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		174BEDDD1E74622F00CEEF31 /* LaunchScreen.storyboard */ = {
+		17B0E32C1E75265E005F3260 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				174BEDDE1E74622F00CEEF31 /* Base */,
+				17B0E32D1E75265E005F3260 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		174BEDDF1E74622F00CEEF31 /* Main.storyboard */ = {
+		17B0E32E1E75265E005F3260 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				174BEDE01E74622F00CEEF31 /* Base */,
+				17B0E32F1E75265E005F3260 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
